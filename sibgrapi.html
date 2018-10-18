@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Ambientes inmersivos: ¿cómo hacer real lo virtual?</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/ownblack.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<img class="logo">
+			<!--<img class="logo itm">-->
+			<!-- Initial Slide -->
+
+			<section data-background-color="white"><img src="images/logoo.fw.png" style="height: 7em; width: auto;"></section>
+			<section>
+				<h3>Heat-based bidirectional phase shifting simulation using position-based dynamics</h3>
+				<div style="color: rgb(192, 192, 192)"><strong>Steeven <span style="color: red">Villa Salazar</span></strong>; Jose Abel <span style="color: red">Ticona</span>; Rafael <span style="color: red">Torchelsen</span>; Luciana <span style="color: red">Nedel</span>; Anderson <span style="color: red">Maciel</span> </div>
+			</section>
+
+
+			<section data-background-color="white" >
+
+			</section>
+			<!-- Ending -->
+			<section data-autoslide="400">
+				<div style="font-size:1.5em;">Steeven <b>Villa</b> <br></div>
+				<div class="fragment fade-up" style="margin: auto;">
+					<div id="left">
+						<p style="font-size:2.2em;">
+							<strong>steeven<span style="color: red">v</span>.com</strong></p>
+					</div>
+					<div id="rigth" style="text-align: left;">
+						<div class="fragment fade-up" style="font-size:1.5em;">/#work<br></div>
+						<div class="fragment fade-up" style="font-size:1.5em;">/#research<br></div>
+					</div>
+				</div>
+
+			</section>
+
+
+
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		Reveal.initialize({
+			transition: 'zoom',
+			width: 960 * 1.2,
+			height: 700 * 1,
+			history: true,
+
+			// Chart.min.js
+
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/chartjs/Chart.min.js' },
+				// the plugin
+				{ src: 'plugin/chartjs/charted.js' }
+			],
+			chart: {
+				// Taken from chartjs documentation
+
+				items: [
+					{
+						selector: "#chart-frame-1",
+						type: "bar",
+						data: {
+							labels: ["Impreciso", "Exacto", "Plausible"],
+							datasets: [
+								{
+									label: "Fidelidad",
+									fillColor: "rgba(250,0,0,0.6)",
+									strokeColor: "rgba(220,220,220,0.8)",
+									highlightFill: "rgba(220,220,220,0.75)",
+									highlightStroke: "rgba(220,220,220,1)",
+									data: [25, 80, 45]
+								},
+								{
+									label: "Velocidad",
+									fillColor: "rgba(100,100,100,0.6)",
+									strokeColor: "rgba(220,220,220,0.8)",
+									highlightFill: "rgba(220,220,220,0.75)",
+									highlightStroke: "rgba(220,220,220,1)",
+									data: [75, 20, 55]
+								}
+							]
+						},
+						options: {
+							responsive: true,
+							multiTooltipTemplate: "<%= datasetLabel %>: <%= value %>",
+							legend: {
+								display: true,
+								position: 'top'
+							}
+						}
+					}
+				]
+			}
+		});
+	</script>
+</body>
+
+</html>
