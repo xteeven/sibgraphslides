@@ -161,45 +161,171 @@
 						<div> Velocities </div>
 					</div>
 				</section>
-				<section>
-					<h3>Solid state</h3>
+				<section data-background-color="white">
+
+					<ul>
+						<li class="fragment fade-in">Constraint-Based \begin{equation}
+							C\left(x\right)\approx 0
+							\end{equation}</li>
+						<li class="fragment fade-in">Positions Given By:
+							\begin{equation}
+							\Delta x = \nabla C \left(x\right) \Delta \lambda
+							\label{eq:deltax}
+							\end{equation}
+						</li>
+						<li class="fragment fade-in">With:
+							\begin{equation}
+							\Delta\lambda=-\frac{C\left(x\right)-\lambda \tilde{\alpha}}{\sum w\left|\nabla
+							C\left(x\right)\right|^2+\tilde{\alpha}}
+							\end{equation}
+						</li>
+					</ul>
+				</section>
+				<section data-background-color="white">
+					<h4>Solid Bodies</h4>
+					<img src="images/distance.PNG" style="height: 7em; width: auto;">
+					<div>$C(x_{1},x_{2}) = \mid x_{1} - x_{2}\mid - l_{0}$</div>
 				</section>
 			</section>
 
 			<section data-background-color="white">
 				<section data-background-color="white">
-					<h2>SPH + PBD = PBF </h2>
+					<h2>SPH</h2>
 					<h3> Smoothed-particle hydrodynamics </h3>
 				</section>
 				<section data-background-color="white">
 					<div>
-					<div id="left"> <img src="images/SPH1.png" style="height: 7em; width: auto;">
+						<div id="left"> <img src="images/SPH1.png" style="height: 7em; width: auto;">
+						</div>
+						<div id="right"> <img src="images/SPH2.png" style="height: 7em; width: auto;">
+						</div>
 					</div>
-					<div id="right"> <img src="images/SPH2.png" style="height: 7em; width: auto;">
-					</div></div>
 
 					<div>
-					<div id="left" > 
-						<div style="color:red">Particle </div>
-						<div style="color:green">Distance between particles</div>
+						<div id="left">
+							<div class="fragment" data-fragment-index="1" style="color:red">Particle </div>
+							<div class="fragment" data-fragment-index="3" style="color:green">Distance between particles</div>
+						</div>
+						<div id="right">
+							<div class="fragment" data-fragment-index="2" style="color:blue"> Neighbors </div>
+							<div class="fragment" data-fragment-index="4" style="color:rgb(150, 30, 150)">Kernel influence </div>
+						</div>
 					</div>
-					<div id="right"> 
-						<div style="color:blue"> Neighbors </div>
-						<div style="color:rgb(150, 30, 150)">Kernel influence </div>
-					</div></div> 
-					
+
 				</section>
 				<section data-background-color="white">
-						<div>
-								<div id="left"> <img src="images/SPH1.png" style="height: 7em; width: auto;">
-								</div>
-								<div id="right"> <img src="images/SPH2.png" style="height: 7em; width: auto;">
-								</div></div>
-						<img src="images/SHPe.PNG" style="height: 5em; width: auto;">
+					<div>
+						<div id="left"> <img src="images/SPH1.png" style="height: 7em; width: auto;">
+						</div>
+						<div id="right"> <img src="images/SPH2.png" style="height: 7em; width: auto;">
+						</div>
+					</div>
+					<div> $A \left( \textbf{x} \right) = \sum_{j} m_{j} \frac{A_{j}}{\rho_{j}}$ <div class="fragment highlight-blue"
+						 style="display:inline-block;"> $W\left(\textbf{x} - \textbf{x}_{j} , h\right)$</div>
+					</div>
 				</section>
 
+				<section data-background-color="white">
+
+					<div>
+						Density calculation
+						\begin{equation}
+						\rho_{i}=\sum m_{j} W\left( \textbf{r}_{i} - \textbf{r}_{j}, h \right)
+						\end{equation} </div>
+
+					<div class="fragment fade-in" data-fragment-index="1">
+						<div class="fragment highlight-red" data-fragment-index="2"> As Constraint:
+							\begin{equation}
+							C(\textbf{x})=\frac{\rho_{i}}{\rho_{0}}-1
+							\end{equation}</div>
+					</div>
+					<h4 class="fragment fade-in" style="color:red" data-fragment-index="2">Position-based fluids</h4>
+				</section>
 			</section>
 
+			<section>
+				<div>
+					<h4>Phase coupling</h4>
+					<div>
+						$\rho_{i}=$
+						<div class="fragment highlight-red" style="display:inline-block" data-fragment-index="2">$\sum_{j} m_{j} W_{ij}$</div>
+						$+$
+						<div class="fragment highlight-green" style="display:inline-block" data-fragment-index="3">$\sum_{k}m_{k} W_{ik}$</div>
+						$+$
+						<div class="fragment highlight-blue" style="display:inline-block" data-fragment-index="4">$\sum_{b}\frac{\rho_{0}}{\delta_{b}}
+							W_{ib}$</div>
+					</div>
+
+
+					<div style="display:inline-block;color:red" class="fragment" data-fragment-index="2">Solid</div>
+					<div style="display:inline-block;color:greenyellow" class="fragment" data-fragment-index="3">Fluid</div>
+					<div style="display:inline-block;color:blue" class="fragment" data-fragment-index="4">Gas</div>
+
+				</div>
+			</section>
+
+			<section>
+
+				<h4>Heat transfer</h4>
+
+				<section>
+					<div> Explicit scheme:
+						\begin{equation}
+						\left(\frac{dT}{dt}\right)=2\phi\sum_{j}\frac{m_j}{\rho_j}\left( T_{j} -T_{j} \right) \nabla W_{ij}
+						\end{equation}</div>
+				</section>
+				<section>
+					<div> Cleary scheme:
+						\begin{equation}
+						\left(\frac{dT}{dt}\right)=\frac{V_{i}}{ m_{i} c_{i} } \sum_{j} \frac{4k_{i}k_{j}}{k_{i}+k_{j}}V_{j}\left(
+						T_{i} -T_{j} \right) \nabla W_{ij}
+						\end{equation}</div>
+				</section>
+				<section data-background-color="white">
+					<div>Latent Heat</div>
+					<img src="images/latent.PNG" style="height: 10em; width: auto;">
+					<div>\begin{equation}
+						\frac{dL}{dt} = c_{i} \Delta T
+						\end{equation}</div>
+				</section>
+				<section>
+					\begin{equation}
+					S \! tate = \begin{cases}
+					S\!olid & T_{i} < T_{m}, \\ Phase \; change_{m-f} & T_{i}=T_{m} \\ Fluid & T_{m} < T_{i} < T_{e} \\ Phase \;
+					 change_{e-c} & T_{i}=T_{e} \\ Gas & T_{i}> T_{e}
+						\end{cases}
+						\end{equation}
+				</section>
+			</section>
+
+			<section>
+				<h4>Transition Coupling</h4>
+				<section>
+
+				</section>
+				<section>
+					<pre style="margin-bottom: -2%; margin-top: 5%">
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="0">01  loop:</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="1">02	for all Particles do calculate Next Positions</code> 
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="2">03	for all Fluid Particles do Set Gravity-Acceleration</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="3">04	for all Particles do Neighborhood Search</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="4">05	loop Iterations:</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="5">06		for all Particles do Density Constraint</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="6">07		for all Fluid Particles do Viscosity Constraint</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="7">08		for all Solid Particles do Distance Constraint</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="8">09	for all Particles do Manage Constraints</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="9">10	for all Particles do Heat Transfer</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="10">11	for all Particles do Update Temperatures</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="11">12	for all Particles do Update Velocities</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="12">13	for all Particles do Update Neighborhood</code>
+</pre>
+					<div class="fragment highlight-current-red" data-fragment-index="2">
+					<div class="fragment highlight-current-red" data-fragment-index="5">Latent Heat of evaporation</div>
+					</div>
+					<div class="fragment highlight-current-red" data-fragment-index="7">Temperature</div>
+					<div class="fragment highlight-current-red" data-fragment-index="8">Latent Heat of melting</div>
+				</section>
+			</section>
 
 			<section>
 				Results
@@ -248,7 +374,8 @@
 				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
 				{ src: 'plugin/chartjs/Chart.min.js' },
 				// the plugin
-				{ src: 'plugin/chartjs/charted.js' }
+				{ src: 'plugin/chartjs/charted.js' },
+				{ src: 'plugin/math/math.js', async: true }
 			],
 			chart: {
 				// Taken from chartjs documentation
