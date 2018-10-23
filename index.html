@@ -305,25 +305,57 @@
 				</section>
 				<section>
 					<pre style="margin-bottom: -2%; margin-top: 5%">
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="0">01  loop:</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="1">02	for all Particles do calculate Next Positions</code> 
+<code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="0">01  loop:</code>
+<code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="1">02	for all Particles do calculate Next Positions</code> 
 <code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="2">03	for all Fluid Particles do Set Gravity-Acceleration</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="3">04	for all Particles do Neighborhood Search</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="4">05	loop Iterations:</code>
+<code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="3">04	for all Particles do Neighborhood Search</code>
+<code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="4">05	loop Iterations:</code>
 <code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="5">06		for all Particles do Density Constraint</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="6">07		for all Fluid Particles do Viscosity Constraint</code>
+<code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="6">07		for all Fluid Particles do Viscosity Constraint</code>
 <code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="7">08		for all Solid Particles do Distance Constraint</code>
 <code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="8">09	for all Particles do Manage Constraints</code>
 <code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="9">10	for all Particles do Heat Transfer</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="10">11	for all Particles do Update Temperatures</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="11">12	for all Particles do Update Velocities</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="12">13	for all Particles do Update Neighborhood</code>
+<code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="10">11	for all Particles do Update Temperatures</code>
+<code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="11">12	for all Particles do Update Velocities</code>
+<code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="12">13	for all Particles do Update Neighborhood</code>
 </pre>
 					<div class="fragment highlight-current-red" data-fragment-index="2">
-					<div class="fragment highlight-current-red" data-fragment-index="5">Latent Heat of evaporation</div>
+						<div class="fragment highlight-current-red" data-fragment-index="5">Latent Heat of evaporation</div>
 					</div>
-					<div class="fragment highlight-current-red" data-fragment-index="7">Temperature</div>
+					<div class="fragment highlight-current-red" data-fragment-index="9">
+						<div class="fragment highlight-current-red" data-fragment-index="7">Temperature</div>
+					</div>
 					<div class="fragment highlight-current-red" data-fragment-index="8">Latent Heat of melting</div>
+				</section>
+				<section>
+					<h4>Liquid-gas Phase</h4>
+					<pre><code>03	for all Fluid Particles do Set Gravity-Acceleration</code></pre>
+					\begin{equation}
+					\beta\left(\gamma \right) = 1-\frac{1}{1 + \left(1 + \frac{12}{L_{e,threshold}}\right)^{\gamma}} \quad \star
+					\end{equation}
+					$\gamma = \frac{L_{e,threshold}}{2} - L_{e}$.
+				</section>
+				<section>
+					<h4>Liquid-gas Phase</h4>
+					<pre> <code>06		for all Particles do Density Constraint</code></pre>
+					<div id="left">
+						\begin{equation}
+						C(\textbf{x})=\frac{\rho_{i}}{\rho_{0}}-1
+						\end{equation}
+					</div>
+					<div id="right" style="font-size:.7em;">
+						\begin{equation}
+						g\left(\omega \right) = \frac{10.8}{\ln \left( \frac{L_{e,threshold} + 0.02}{ 0.02} \right)} \ln \left( \omega
+						\right) - 9.8
+						\end{equation}
+						<br>
+						$\omega = \frac{L_{e,threshold} + 0.02}{ L_{e,threshold} + 0.02 - L_{e}}$
+					</div>
+				</section>
+				<section>
+					<h4>Solid-liquid phase</h4>
+					<pre><code>09	for all Particles do Manage Constraints</code></pre>
+
 				</section>
 			</section>
 
