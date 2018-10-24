@@ -21,6 +21,8 @@
 		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
 		document.getElementsByTagName('head')[0].appendChild(link);
 	</script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/p5.min.js"></script>
 </head>
 
 <body>
@@ -269,6 +271,7 @@
 				<h4>Heat transfer</h4>
 
 				<section>
+					<div id="heat"></div>
 					<div> Explicit scheme:
 						\begin{equation}
 						\left(\frac{dT}{dt}\right)=2\phi\sum_{j}\frac{m_j}{\rho_j}\left( T_{j} -T_{j} \right) \nabla W_{ij}
@@ -353,6 +356,11 @@
 					</div>
 				</section>
 				<section>
+					<div style="width: 100%;">
+						<canvas id="myFunction"></canvas>
+					</div>
+				</section>
+				<section>
 					<h4>Solid-liquid phase</h4>
 					<pre><code>09	for all Particles do Manage Constraints</code></pre>
 					<h5>Constraint Manager</h5>
@@ -386,6 +394,28 @@
 
 			<section>
 				<h4>Results</h4>
+
+				<section>
+					<div style="width: 100%">
+						<canvas id="myBar1"></canvas>
+					</div>
+				</section>
+				<section>
+					<div style="width: 100%">
+						<canvas id="myBar2"></canvas>
+					</div>
+				</section>
+				<section>
+					<div style="width: 100%">
+						<canvas id="myBar3"></canvas>
+					</div>
+				</section>
+				<section>
+					<div style="width: 100%">
+						<canvas id="myBar4"></canvas>
+					</div>
+				</section>
+
 				<section data-background-video="videos/NoRender/0001-0639.mp4">
 				</section>
 				<section data-background-video="videos/NoRender/0001-0639a.mp4">
@@ -432,6 +462,7 @@
 
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
+	<script src="animation.js"></script>
 
 	<script>
 		Reveal.initialize({
