@@ -262,7 +262,7 @@
 
 					<div style="display:inline-block;color:red" class="fragment" data-fragment-index="2">Solid</div>
 					<div style="display:inline-block;color:greenyellow" class="fragment" data-fragment-index="3">Fluid</div>
-					<div style="display:inline-block;color:blue" class="fragment" data-fragment-index="4">Gas</div>
+					<div style="display:inline-block;color:rgba(52, 99, 255, 0.829)" class="fragment" data-fragment-index="4">Boundaries</div>
 
 				</div>
 			</section>
@@ -357,9 +357,7 @@
 					</div>
 				</section>
 				<section>
-					<div style="width: 100%;">
 						<canvas id="myFunction"></canvas>
-					</div>
 				</section>
 				<section>
 					<h4>Solid-liquid phase</h4>
@@ -413,22 +411,33 @@
 					</div>
 				</section>
 				<section data-background-video="videos/NoRender/0001-0639.mp4" data-background-video-loop>
+					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Solidifying</h4> </div>
+				</section>
+				<section data-background-video="videos/Render/solidify.mp4" data-background-video-loop data-background-color="white">
+					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Solidifying</h4> </div>
 				</section>
 				<section data-background-video="videos/NoRender/0001-0639a.mp4" data-background-video-loop>
+					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Melting</h4> </div>
+				</section>
+				<section data-background-video="videos/Render/melting.mp4" data-background-video-loop data-background-video-loop data-background-color="white">
+					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Melting</h4> </div>
 				</section>
 				<section data-background-video="videos/NoRender/0001-0891c.mp4" data-background-video-loop>
+					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Condensating</h4> </div>
+				</section>
+				<section data-background-video="videos/Render/condensation.mp4" data-background-video-loop data-background-video-loop data-background-color="white">
+					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Condensating</h4> </div>
 				</section>
 				<section data-background-video="videos/NoRender/0001-5188.mp4" data-background-video-loop>
+					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Evaporating</h4> </div>
+				</section>
+				<section data-background-video="videos/Render/evaporation-convection.mp4" data-background-video-loop data-background-video-loop data-background-color="white"> 
+					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Evaporating</h4> </div>
 				</section>
 				<section data-background-video="videos/NoRender/0001-4480.mp4" data-background-video-loop>
+					
 				</section>
-				<section data-background-video="videos/Render/solidify.mp4" data-background-video-loop>
-				</section>
-				<section data-background-video="videos/Render/melting.mp4" data-background-video-loop>
-				</section>
-				<section data-background-video="videos/Render/evaporation-convection.mp4" data-background-video-loop>
-				</section>
-				<section data-background-video="videos/Render/condensation.mp4" data-background-video-loop>
+				<section data-background-video="videos/Render/simulation.mp4" data-background-video-loop data-background-video-loop data-background-color="white">
 				</section>
 			</section>
 
@@ -468,7 +477,7 @@
 
 	<script>
 		Reveal.initialize({
-			transition: 'zoom',
+			transition: 'fade',
 			width: 960 * 1.2,
 			height: 700 * 1,
 			history: true,

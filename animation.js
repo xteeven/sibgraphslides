@@ -308,10 +308,10 @@
 
 
 ///////////////////////////////////////////////
-      var ctx = document.getElementById("myFunction").getContext("2d");
+      var ctx = document.getElementById("myFunction");//.getContext("2d");
       var xLabel = [];
       var lim = 50;
-      for (var i = 0; i <= lim; i += 0.5) {
+      for (var i = 0; i <= lim; i += 0.2) {
         xLabel.push(i);
       }
       var data = {
@@ -368,14 +368,14 @@
                 display: false
               }]
           },
-          legend: {
+          /*legend: {
             display: true,
             position: "bottom",
             labels: {
               fontColor: "#fff",
               fontSize: 20
             }
-          },
+          },*/
           title: {
             display: true,
             position: "top",
