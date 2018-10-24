@@ -56,39 +56,23 @@
 			</section>
 			<section>
 				<h4>Related Works</h4>
-				<section data-background-image="images/video.jpg">
+				<section data-background-video="Videos/Related/physically.mp4" data-background-video-loop data-background-video-loop data-background-color="white">
 					<div class="fragment fade-up" id="left">
-						<div id="panel">A novel fluid-solid coupling framework integrating
-							flip and shape matching methods.<br> <strong> Gao Y et al. </strong> </div>
+						<div id="panel">A physically consistent implicit viscosity
+								solver for SPH fluids<br> <strong> Weiler M et al.</strong> </div>
 					</div>
 					<div class="fragment fade-up" id="right">
 						<div id="panel">
 							<ul>
 								<li>Melting</li>
-								<li>Solidifying</li>
+								<li>Not Solidifying</li>
 								<li>Not Vaporization</li>
 								<li>Not Condensation</li>
 							</ul>
 						</div>
 					</div>
 				</section>
-				<section data-background-image="images/video.jpg">
-					<div class="fragment fade-up" id="left">
-						<div id="panel"> An efficient heat-based model for solid-liquid-gas phase transition and dynamic interaction. <br>
-							<strong> Gao Y et al. </strong> </div>
-					</div>
-					<div class="fragment fade-up" id="right">
-						<div id="panel">
-							<ul>
-								<li>Melting</li>
-								<li>Solidifying</li>
-								<li>Vaporization</li>
-								<li>Not Condensation</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<section data-background-image="images/video.jpg">
+				<section data-background-video="Videos/Related/augmented.mp4" data-background-video-loop>
 					<div class="fragment fade-up" id="left">
 						<div id="panel">Augmented mpm for phase-change and varied materials.<br> <strong> Stomakhin et al. </strong>
 						</div>
@@ -104,7 +88,23 @@
 						</div>
 					</div>
 				</section>
-				<section data-background-image="images/video.jpg">
+				<section data-background-video="Videos/Related/efficient.mp4" data-background-video-loop data-background-color="white">
+					<div class="fragment fade-up" id="left">
+						<div id="panel"> An efficient heat-based model for solid-liquid-gas phase transition and dynamic interaction. <br>
+							<strong> Gao Y et al. </strong> </div>
+					</div>
+					<div class="fragment fade-up" id="right">
+						<div id="panel">
+							<ul>
+								<li>Melting</li>
+								<li>Solidifying</li>
+								<li>Vaporization</li>
+								<li>Not Condensation</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background-video="Videos/Related/evaporation.mp4" data-background-video-loop >
 					<div class="fragment fade-up" id="left">
 						<div id="panel"> Evaporation and Condensation of SPH-based Fluids<br> <strong> Hochstetter and Kolb</strong>
 						</div>
@@ -373,10 +373,7 @@
 					<div class="fragment">
 						<div style="left: 25%; position: relative;">Current number of constraints</div>
 						<div style="left: 50%; position: relative;" class="circlec"></div>
-						<div style="display:inline-block;color:red">$nCmax<4$ </div> </4> </div> 
-					</section> 
-						
-				<section >
+						<div style="display:inline-block;color:red">$nCmax<4$ </div> </4> </div> </section> <section>
 								<pre><code>09	for all Particles do Manage Constraints</code></pre>
 								<h5>Constraint Manager</h5>
 								<img src="images/distanceblack.png" style="height: 7em; width: auto;">
@@ -386,26 +383,32 @@
 
 			<section>
 				<h4>Results</h4>
-				<section data-background-video="videos/NoRender/0001-0639.mp4">
+				<section data-background-video="videos/NoRender/0001-0639.mp4" data-background-video-loop>
 				</section>
-				<section data-background-video="videos/NoRender/0001-0639a.mp4">
+				<section data-background-video="videos/NoRender/0001-0639a.mp4" data-background-video-loop>
 				</section>
-				<section data-background-video="videos/NoRender/0001-0891c.mp4">
+				<section data-background-video="videos/NoRender/0001-0891c.mp4" data-background-video-loop>
 				</section>
-				<section data-background-video="videos/NoRender/0001-2554.mp4">
+				<section data-background-video="videos/NoRender/0001-5188.mp4" data-background-video-loop>
 				</section>
-				<section data-background-video="videos/NoRender/0001-4480.mp4">
+				<section data-background-video="videos/NoRender/0001-4480.mp4" data-background-video-loop>
 				</section>
-				<section data-background-video="videos/NoRender/0001-5188.mp4">
+				<section data-background-video="videos/Render/solidify.mp4" data-background-video-loop>
+				</section>
+				<section data-background-video="videos/Render/melting.mp4" data-background-video-loop>
+				</section>
+				<section data-background-video="videos/Render/evaporation-convection.mp4" data-background-video-loop>
+				</section>
+				<section data-background-video="videos/Render/condensation.mp4" data-background-video-loop>
 				</section>
 			</section>
 
 			<section>
-				<h4>Limitations</h4> 
+				<h4>Limitations</h4>
 				<ul>
-<li>No truly rigid bodies</li>
-<li>Not pressure dependency</li>
-<li>A little far from Real-World physics</li>
+					<li>No truly rigid bodies</li>
+					<li>Not pressure dependency</li>
+					<li>A little far from Real-World physics</li>
 				</ul>
 			</section>
 			<!-- Ending -->
