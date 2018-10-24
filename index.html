@@ -45,15 +45,27 @@
 
 				<section data-background-image="images/melting.jpg" data-state="blur">
 					<h1 style="color:#000000bd">Melting</h1>
+					<object id="icon" data="images/3d.svg" type=""></object>
+					<object id="icon" data="images/right-arrow.svg" alt=""></object>
+					<object id="icon" data="images/blur.svg"></object>
 				</section>
 				<section data-background-image="images/frozen.jpg" data-state="blur" data-background-color="white">
 					<h1 style="color:#000000bd">Freezing</h1>
+					<object id="icon" data="images/blur.svg" type=""></object>
+					<object id="icon" data="images/right-arrow.svg" alt=""></object>
+					<object id="icon" data="images/3d.svg"></object>
 				</section>
 				<section data-background-image="images/evaporation.jpg" data-state="blur" data-background-color="white">
 					<h1 style="color:#000000bd">Evaporation</h1>
+					<object id="icon" data="images/blur.svg" type=""></object>
+					<object id="icon" data="images/right-arrow.svg" alt=""></object>
+					<object id="icon" data="images/cloud-internet-symbol.svg"></object>
 				</section>
 				<section data-background-image="images/condensation.jpg" data-state="blur">
 					<h1 style="color:#ffffffbd">Condensation</h1>
+					<object id="icon" data="images/cloud-internet-symbolwhite.svg" type=""></object>
+					<object id="icon" data="images/right-arrowwhite.svg" alt=""></object>
+					<object id="icon" data="images/blurwhite.svg"></object>
 				</section>
 			</section>
 			<section>
@@ -62,22 +74,23 @@
 				 data-background-video-loop data-background-color="white">
 					<div id="left">
 						<div id="panel">A physically consistent implicit viscosity
-							solver for SPH fluids<br> <strong> Weiler M et al.</strong> </div>
+							solver for SPH fluids<br> <strong> Weiler M et al.</strong><br><strong>(2018)</strong></div>
 					</div>
 					<div id="right">
 						<div id="panel">
+						<div>Summary:</div>
 							<ul>
 								<li>Melting</li>
-								<li style="color:red">Not Solidifying</li>
-								<li style="color:red">Not Vaporization</li>
-								<li style="color:red">Not Condensation</li>
+								<li><s>Solidifying</s></li>
+								<li><s>Vaporization</s></li>
+								<li><s>Condensation</s></li>
 							</ul>
 						</div>
 					</div>
 				</section>
 				<section data-background-video="Videos/Related/augmented.mp4" data-background-video-loop>
 					<div id="left">
-						<div id="panel">Augmented mpm for phase-change and varied materials.<br> <strong> Stomakhin et al. </strong>
+						<div id="panel">Augmented mpm for phase-change and varied materials.<br> <strong> Stomakhin et al. </strong><br><strong>(2014)</strong>
 						</div>
 					</div>
 					<div id="right">
@@ -85,22 +98,22 @@
 							<ul>
 								<li>Melting</li>
 								<li>Solidifying</li>
-								<li style="color:red">Not Vaporization</li>
-								<li style="color:red">Not Condensation</li>
+								<li><s>Vaporization</s></li>
+								<li><s>Condensation</s></li>
 							</ul>
 						</div>
 					</div>
 				</section>
 				<section data-background-video="Videos/Related/evaporation.mp4" data-background-video-loop>
 					<div id="left">
-						<div id="panel"> Evaporation and Condensation of SPH-based Fluids<br> <strong> Hochstetter and Kolb</strong>
+						<div id="panel"> Evaporation and Condensation of SPH-based Fluids<br> <strong> Hochstetter and Kolb</strong><br><strong>(2017)</strong>
 						</div>
 					</div>
 					<div id="right">
 						<div id="panel">
 							<ul>
-								<li style="color:red">Not Melting</li>
-								<li style="color:red">Not Solidifying</li>
+								<li><s>Melting</s></li>
+								<li><s>Solidifying</s></li>
 								<li>Vaporization</li>
 								<li>Condensation</li>
 							</ul>
@@ -109,7 +122,7 @@
 				</section>
 				<section data-background-video="Videos/Related/efficient.mp4" data-background-video-loop data-background-color="white">
 					<div id="left">
-						<div id="panel"> An efficient heat-based model for solid-liquid-gas phase transition and dynamic interaction. <br>
+						<div id="panel"> An efficient heat-based model for solid-liquid-gas phase transition and dynamic interaction. <br><br><strong>(2017)</strong>
 							<strong> Gao Y et al. </strong> </div>
 					</div>
 					<div id="right">
@@ -118,7 +131,7 @@
 								<li>Melting</li>
 								<li>Solidifying</li>
 								<li>Vaporization</li>
-								<li style="color:red">Not Condensation</li>
+								<li><s>Condensation</s></li>
 							</ul>
 						</div>
 					</div>
@@ -320,14 +333,14 @@
 					<pre style="margin-bottom: -2%; margin-top: 5%">
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="0">01  loop:</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="1">02	for all Particles do calculate Next Positions</code> 
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="2">03	for all Fluid Particles do Set Gravity-Acceleration</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red"   data-fragment-index="2">03	for all Fluid Particles do Set Gravity-Acceleration</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="3">04	for all Particles do Neighborhood Search</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="4">05	loop Iterations:</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="5">06		for all Particles do Density Constraint</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red"   data-fragment-index="5">06		for all Particles do Density Constraint</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="6">07		for all Fluid Particles do Viscosity Constraint</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="7">08		for all Solid Particles do Distance Constraint</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="8">09	for all Particles do Manage Constraints</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="9">10	for all Particles do Heat Transfer</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red"   data-fragment-index="7">08		for all Solid Particles do Distance Constraint</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red"   data-fragment-index="8">09	for all Particles do Manage Constraints</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red"   data-fragment-index="9">10	for all Particles do Heat Transfer</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="10">11	for all Particles do Update Temperatures</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="11">12	for all Particles do Update Velocities</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="12">13	for all Particles do Update Neighborhood</code>
