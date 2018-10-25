@@ -44,80 +44,93 @@
 
 				<section data-background-image="images/melting.jpg" data-state="blur">
 					<h1 style="color:#000000bd">Melting</h1>
+					<object id="icon" data="images/3d.svg" type=""></object>
+					<object id="icon" data="images/right-arrow.svg" alt=""></object>
+					<object id="icon" data="images/blur.svg"></object>
 				</section>
 				<section data-background-image="images/frozen.jpg" data-state="blur" data-background-color="white">
 					<h1 style="color:#000000bd">Freezing</h1>
+					<object id="icon" data="images/blur.svg" type=""></object>
+					<object id="icon" data="images/right-arrow.svg" alt=""></object>
+					<object id="icon" data="images/3d.svg"></object>
 				</section>
 				<section data-background-image="images/evaporation.jpg" data-state="blur" data-background-color="white">
 					<h1 style="color:#000000bd">Evaporation</h1>
+					<object id="icon" data="images/blur.svg" type=""></object>
+					<object id="icon" data="images/right-arrow.svg" alt=""></object>
+					<object id="icon" data="images/cloud-internet-symbol.svg"></object>
 				</section>
 				<section data-background-image="images/condensation.jpg" data-state="blur">
 					<h1 style="color:#ffffffbd">Condensation</h1>
+					<object id="icon" data="images/cloud-internet-symbolwhite.svg" type=""></object>
+					<object id="icon" data="images/right-arrowwhite.svg" alt=""></object>
+					<object id="icon" data="images/blurwhite.svg"></object>
 				</section>
 			</section>
 			<section>
 				<h4>Related Works</h4>
 				<section data-background-video="Videos/Related/physically.mp4" data-background-video-loop
 				 data-background-video-loop data-background-color="white">
-					<div class="fragment fade-up" id="left">
+					<div id="left">
 						<div id="panel">A physically consistent implicit viscosity
-							solver for SPH fluids<br> <strong> Weiler M et al.</strong> </div>
+							solver for SPH fluids<br> <strong> Weiler M et al.</strong><br><strong>(2018)</strong></div>
 					</div>
-					<div class="fragment fade-up" id="right">
+					<div id="right">
 						<div id="panel">
+						<div>Summary:</div>
 							<ul>
 								<li>Melting</li>
-								<li>Not Solidifying</li>
-								<li>Not Vaporization</li>
-								<li>Not Condensation</li>
+								<li><s>Solidifying</s></li>
+								<li><s>Vaporization</s></li>
+								<li><s>Condensation</s></li>
 							</ul>
 						</div>
 					</div>
 				</section>
 				<section data-background-video="Videos/Related/augmented.mp4" data-background-video-loop>
-					<div class="fragment fade-up" id="left">
-						<div id="panel">Augmented mpm for phase-change and varied materials.<br> <strong> Stomakhin et al. </strong>
+					<div id="left">
+						<div id="panel">Augmented mpm for phase-change and varied materials.<br> <strong> Stomakhin et al. </strong><br><strong>(2014)</strong>
 						</div>
 					</div>
-					<div class="fragment fade-up" id="right">
+					<div id="right">
 						<div id="panel">
 							<ul>
 								<li>Melting</li>
 								<li>Solidifying</li>
-								<li>Not Vaporization</li>
-								<li>Not Condensation</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<section data-background-video="Videos/Related/efficient.mp4" data-background-video-loop data-background-color="white">
-					<div class="fragment fade-up" id="left">
-						<div id="panel"> An efficient heat-based model for solid-liquid-gas phase transition and dynamic interaction. <br>
-							<strong> Gao Y et al. </strong> </div>
-					</div>
-					<div class="fragment fade-up" id="right">
-						<div id="panel">
-							<ul>
-								<li>Melting</li>
-								<li>Solidifying</li>
-								<li>Vaporization</li>
-								<li>Not Condensation</li>
+								<li><s>Vaporization</s></li>
+								<li><s>Condensation</s></li>
 							</ul>
 						</div>
 					</div>
 				</section>
 				<section data-background-video="Videos/Related/evaporation.mp4" data-background-video-loop>
-					<div class="fragment fade-up" id="left">
-						<div id="panel"> Evaporation and Condensation of SPH-based Fluids<br> <strong> Hochstetter and Kolb</strong>
+					<div id="left">
+						<div id="panel"> Evaporation and Condensation of SPH-based Fluids<br> <strong> Hochstetter and Kolb</strong><br><strong>(2017)</strong>
 						</div>
 					</div>
-					<div class="fragment fade-up" id="right">
+					<div id="right">
 						<div id="panel">
 							<ul>
-								<li>Not Melting</li>
-								<li>Not Solidifying</li>
+								<li><s>Melting</s></li>
+								<li><s>Solidifying</s></li>
 								<li>Vaporization</li>
 								<li>Condensation</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background-video="Videos/Related/efficient.mp4" data-background-video-loop data-background-color="white">
+					<div id="left">
+						<div id="panel"> An efficient heat-based model for solid-liquid-gas phase transition and dynamic interaction. <br><br><strong>(2017)</strong>
+							<strong> Gao Y et al. </strong> </div>
+					</div>
+					<div id="right">
+						<div id="panel">
+							<ul>
+								<li>Melting</li>
+								<li>Solidifying</li>
+								<li>Vaporization</li>
+								<li><s>Condensation</s></li>
 							</ul>
 						</div>
 					</div>
@@ -135,38 +148,48 @@
 				</ul>
 			</section>
 			<section data-background-color="white">
-				<section>
+				<section data-background-color="white">
 					<h2>PBD</h2>
 					<h3>Position-based Dynamics</h3>
 				</section>
 				<section data-transition="fade" data-background-color="white">
-					<div id="left"> <img src="images/i1.PNG" style="height: 7em; width: auto;">
+					<div id="left">
+						<strong>Impulse-based</strong>
+						<img src="images/i1.PNG" style="height: 7em; width: auto;">
 						<div>Forces (accelerations)</div>
 					</div>
-					<div id="right"> <img src="images/PBD1.PNG" style="height: 7em; width: auto;">
+					<div id="right">
+						<strong>Position-based</strong>
+						<img src="images/PBD1.PNG" style="height: 7em; width: auto;">
 						<div> Positions </div>
 					</div>
 				</section>
 				<section data-transition="fade" data-background-color="white">
-					<div id="left"> <img src="images/i2.PNG" style="height: 7em; width: auto;">
+
+					<div id="left"> <strong>Impulse-based</strong> <img src="images/i2.PNG" style="height: 7em; width: auto;">
 						<div>Velocities</div>
 					</div>
-					<div id="right"> <img src="images/PBD2.PNG" style="height: 7em; width: auto;">
+					<div id="right">
+						<strong>Position-based</strong>
+						<img src="images/PBD2.PNG" style="height: 7em; width: auto;">
 						<div>Position Correction</div>
 					</div>
 				</section>
 				<section data-transition="fade" data-background-color="white">
-					<div id="left"> <img src="images/i3.PNG" style="height: 7em; width: auto;">
+
+					<div id="left"> <strong>Impulse-based</strong><img src="images/i3.PNG" style="height: 7em; width: auto;">
 						<div>Position Correction </div>
 					</div>
-					<div id="right"> <img src="images/PBD3.PNG" style="height: 7em; width: auto;">
+					<div id="right">
+						<strong>Position-based</strong>
+						<img src="images/PBD3.PNG" style="height: 7em; width: auto;">
 						<div> Velocities </div>
 					</div>
 				</section>
 				<section data-background-color="white">
 
 					<ul>
-						<li class="fragment fade-in">Constraint-Based \begin{equation}
+						<li>Constraint-Based \begin{equation}
 							C\left(x\right)\approx 0
 							\end{equation}</li>
 						<li class="fragment fade-in">Positions Given By:
@@ -175,12 +198,12 @@
 							\label{eq:deltax}
 							\end{equation}
 						</li>
-						<li class="fragment fade-in">With:
+						<!-- 	<li class="fragment fade-in">With:
 							\begin{equation}
 							\Delta\lambda=-\frac{C\left(x\right)-\lambda \tilde{\alpha}}{\sum w\left|\nabla
 							C\left(x\right)\right|^2+\tilde{\alpha}}
 							\end{equation}
-						</li>
+						</li>-->
 					</ul>
 				</section>
 				<section data-background-color="white">
@@ -270,19 +293,21 @@
 
 				<h4>Heat transfer</h4>
 
-				<section>
-					<div id="heat"></div>
+				<!--	<section>
+			 		<div id="heat"></div>
 					<div> Explicit scheme:
 						\begin{equation}
 						\left(\frac{dT}{dt}\right)=2\phi\sum_{j}\frac{m_j}{\rho_j}\left( T_{j} -T_{j} \right) \nabla W_{ij}
 						\end{equation}</div>
-				</section>
+				</section>-->
 				<section>
-					<div> Cleary scheme:
+					<div> Cleary et al. scheme:</div>
+					<div>
 						\begin{equation}
 						\left(\frac{dT}{dt}\right)=\frac{V_{i}}{ m_{i} c_{i} } \sum_{j} \frac{4k_{i}k_{j}}{k_{i}+k_{j}}V_{j}\left(
 						T_{i} -T_{j} \right) \nabla W_{ij}
 						\end{equation}</div>
+					<div id="heat"></div>
 				</section>
 				<section data-background-color="white">
 					<div>Latent Heat</div>
@@ -291,33 +316,30 @@
 						\frac{dL}{dt} = c_{i} \Delta T
 						\end{equation}</div>
 				</section>
-				<section>
+				<!-- <section>
 					\begin{equation}
 					S \! tate = \begin{cases}
 					S\!olid & T_{i} < T_{m}, \\ Phase \; change_{m-f} & T_{i}=T_{m} \\ Fluid & T_{m} < T_{i} < T_{e} \\ Phase \;
 					 change_{e-c} & T_{i}=T_{e} \\ Gas & T_{i}> T_{e}
 						\end{cases}
 						\end{equation}
-				</section>
+				</section> -->
 			</section>
 
 			<section>
 				<h4>Transition Coupling</h4>
 				<section>
-
-				</section>
-				<section>
 					<pre style="margin-bottom: -2%; margin-top: 5%">
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="0">01  loop:</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="1">02	for all Particles do calculate Next Positions</code> 
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="2">03	for all Fluid Particles do Set Gravity-Acceleration</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red"   data-fragment-index="2">03	for all Fluid Particles do Set Gravity-Acceleration</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="3">04	for all Particles do Neighborhood Search</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="4">05	loop Iterations:</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="5">06		for all Particles do Density Constraint</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red"   data-fragment-index="5">06		for all Particles do Density Constraint</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="6">07		for all Fluid Particles do Viscosity Constraint</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="7">08		for all Solid Particles do Distance Constraint</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="8">09	for all Particles do Manage Constraints</code>
-<code style="margin-top: -3%" class="fragment highlight-current-red" data-fragment-index="9">10	for all Particles do Heat Transfer</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red"   data-fragment-index="7">08		for all Solid Particles do Distance Constraint</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red"   data-fragment-index="8">09	for all Particles do Manage Constraints</code>
+<code style="margin-top: -3%" class="fragment highlight-current-red"   data-fragment-index="9">10	for all Particles do Heat Transfer</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="10">11	for all Particles do Update Temperatures</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="11">12	for all Particles do Update Velocities</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="12">13	for all Particles do Update Neighborhood</code>
@@ -334,25 +356,27 @@
 					<h4>Liquid-gas Phase</h4>
 					<pre><code>03	for all Fluid Particles do Set Gravity-Acceleration</code></pre>
 					\begin{equation}
-					\beta\left(\gamma \right) = 1-\frac{1}{1 + \left(1 + \frac{12}{L_{e,threshold}}\right)^{\gamma}} \quad \star
+					g\left(\omega \right) = \frac{10.8}{\ln \left( \frac{L_{e,threshold} + 0.02}{ 0.02} \right)} \ln \left( \omega
+					\right) - 9.8
 					\end{equation}
-					$\gamma = \frac{L_{e,threshold}}{2} - L_{e}$.
+					<br>
+					$\omega = \frac{L_{e,threshold} + 0.02}{ L_{e,threshold} + 0.02 - L_{e}}$
 				</section>
 				<section>
 					<h4>Liquid-gas Phase</h4>
 					<pre> <code>06		for all Particles do Density Constraint</code></pre>
 					<div id="left">
 						\begin{equation}
-						C(\textbf{x})=\frac{\rho_{i}}{\rho_{0}}-1
+						C(\textbf{x})=\frac{\rho_{i}}{\rho_{0}\beta}-1
 						\end{equation}
 					</div>
 					<div id="right" style="font-size:.7em;">
 						\begin{equation}
-						g\left(\omega \right) = \frac{10.8}{\ln \left( \frac{L_{e,threshold} + 0.02}{ 0.02} \right)} \ln \left( \omega
-						\right) - 9.8
+						\beta\left(\gamma \right) = 1-\frac{1}{1 + \left(1 + \frac{12}{L_{e,threshold}}\right)^{\gamma}} \quad \star
 						\end{equation}
-						<br>
-						$\omega = \frac{L_{e,threshold} + 0.02}{ L_{e,threshold} + 0.02 - L_{e}}$
+						$\gamma = \frac{L_{e,threshold}}{2} - L_{e}$.
+
+
 					</div>
 				</section>
 				<section>
@@ -402,33 +426,53 @@
 					<iframe style="overflow:hidden;margin:5px 5px auto auto;" class="stretch" scrolling="no" class="stretch" id="chart-4" data-chart></iframe>
 				</section>
 				<section data-background-video="videos/NoRender/0001-0639.mp4" data-background-video-loop>
-					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Solidifying</h4> </div>
+					<div id="left">
+						<h4 id="panel" style="position:absolute; bottom:-1000%">Solidifying</h4>
+					</div>
 				</section>
 				<section data-background-video="videos/Render/solidify.mp4" data-background-video-loop data-background-color="white">
-					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Solidifying</h4> </div>
+					<div id="left">
+						<h4 id="panel" style="position:absolute; bottom:-1000%">Solidifying</h4>
+					</div>
 				</section>
 				<section data-background-video="videos/NoRender/0001-0639a.mp4" data-background-video-loop>
-					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Melting</h4> </div>
+					<div id="left">
+						<h4 id="panel" style="position:absolute; bottom:-1000%">Melting</h4>
+					</div>
 				</section>
-				<section data-background-video="videos/Render/melting.mp4" data-background-video-loop data-background-video-loop data-background-color="white">
-					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Melting</h4> </div>
+				<section data-background-video="videos/Render/melting.mp4" data-background-video-loop data-background-video-loop
+				 data-background-color="white">
+					<div id="left">
+						<h4 id="panel" style="position:absolute; bottom:-1000%">Melting</h4>
+					</div>
 				</section>
 				<section data-background-video="videos/NoRender/0001-0891c.mp4" data-background-video-loop>
-					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Condensating</h4> </div>
+					<div id="left">
+						<h4 id="panel" style="position:absolute; bottom:-1000%">Condensating</h4>
+					</div>
 				</section>
-				<section data-background-video="videos/Render/condensation.mp4" data-background-video-loop data-background-video-loop data-background-color="white">
-					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Condensating</h4> </div>
+				<section data-background-video="videos/Render/condensation.mp4" data-background-video-loop
+				 data-background-video-loop data-background-color="white">
+					<div id="left">
+						<h4 id="panel" style="position:absolute; bottom:-1000%">Condensating</h4>
+					</div>
 				</section>
 				<section data-background-video="videos/NoRender/0001-5188.mp4" data-background-video-loop>
-					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Evaporating</h4> </div>
+					<div id="left">
+						<h4 id="panel" style="position:absolute; bottom:-1000%">Evaporating</h4>
+					</div>
 				</section>
-				<section data-background-video="videos/Render/evaporation-convection.mp4" data-background-video-loop data-background-video-loop data-background-color="white"> 
-					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Evaporating</h4> </div>
+				<section data-background-video="videos/Render/evaporation-convection.mp4" data-background-video-loop
+				 data-background-video-loop data-background-color="white">
+					<div id="left">
+						<h4 id="panel" style="position:absolute; bottom:-1000%">Evaporating</h4>
+					</div>
 				</section>
 				<section data-background-video="videos/NoRender/0001-4480.mp4" data-background-video-loop>
-					
+
 				</section>
-				<section data-background-video="videos/Render/simulation.mp4" data-background-video-loop data-background-video-loop data-background-color="white">
+				<section data-background-video="videos/Render/simulation.mp4" data-background-video-loop data-background-video-loop
+				 data-background-color="white">
 				</section>
 			</section>
 
