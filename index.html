@@ -21,7 +21,6 @@
 		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
 		document.getElementsByTagName('head')[0].appendChild(link);
 	</script>
-	<script src="js/Chart.min.js"></script>
 	<script src="js/p5.min.js"></script>
 </head>
 
@@ -357,7 +356,7 @@
 					</div>
 				</section>
 				<section>
-						<canvas id="myFunction"></canvas>
+					<iframe style="overflow:hidden;margin:5px 5px auto auto;" class="stretch" scrolling="no" class="stretch" id="function" data-chart="line"></iframe>
 				</section>
 				<section>
 					<h4>Solid-liquid phase</h4>
@@ -391,24 +390,16 @@
 			<section>
 				<h4>Results</h4>
 				<section >
-					<div style="width: 100%">
-						<canvas id="myBar1"></canvas>
-					</div>
+					<iframe style="overflow:hidden;margin:5px 5px auto auto;" class="stretch" scrolling="no" class="stretch" id="chart-1" data-chart></iframe>					
 				</section>
 				<section>
-					<div style="width: 100%">
-						<canvas id="myBar2"></canvas>
-					</div>
+					<iframe style="overflow:hidden;margin:5px 5px auto auto;" class="stretch" scrolling="no" class="stretch" id="chart-2" data-chart></iframe>
 				</section>
 				<section>
-					<div style="width: 100%">
-						<canvas id="myBar3"></canvas>
-					</div>
+					<iframe style="overflow:hidden;margin:5px 5px auto auto;" class="stretch" scrolling="no" class="stretch" id="chart-3" data-chart></iframe>
 				</section>
 				<section>
-					<div style="width: 100%">
-						<canvas id="myBar4"></canvas>
-					</div>
+					<iframe style="overflow:hidden;margin:5px 5px auto auto;" class="stretch" scrolling="no" class="stretch" id="chart-4" data-chart></iframe>
 				</section>
 				<section data-background-video="videos/NoRender/0001-0639.mp4" data-background-video-loop>
 					<div id="left"> <h4 id="panel" style="position:absolute; bottom:-1000%">Solidifying</h4> </div>
@@ -483,12 +474,12 @@
 			history: true,
 
 			// Chart.min.js
-
 			dependencies: [
 				{ src: 'plugin/markdown/marked.js' },
 				{ src: 'plugin/markdown/markdown.js' },
 				{ src: 'plugin/notes/notes.js', async: true },
 				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				//{ src: 'plugin/chartjs/Chart.min.js' },
 				{ src: 'plugin/chartjs/Chart.min.js' },
 				// the plugin
 				{ src: 'plugin/chartjs/charted.js' },
@@ -496,7 +487,6 @@
 			],
 			chart: {
 				// Taken from chartjs documentation
-
 				items: [
 					{
 						selector: "#chart-frame-1",
@@ -530,6 +520,36 @@
 								position: 'top'
 							}
 						}
+					},
+					{
+						selector: "#chart-1",
+						type: "bar",
+						data: createData(0),        
+						options: createOption("8K particles"),
+					},
+					{
+						selector: "#chart-2",
+						type: "bar",
+						data: createData(1),        
+						options: createOption("16K particles"),						
+					},
+					{
+						selector: "#chart-3",
+						type: "bar",
+						data: createData(2),        
+						options: createOption("64K particles")
+					},
+					{
+						selector: "#chart-4",
+						type: "bar",
+						data: createData(3),        
+						options: createOption("128K particles")
+					},
+					{
+						selector: "#function",
+						type: "line",
+						data: createDataFunction(),        
+						options: createOptionFunction()
 					}
 				]
 			}
