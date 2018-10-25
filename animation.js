@@ -15,7 +15,7 @@ var sketch = function (p) {
 
     p.colorMode(p.HSB, 360, 100, 100);
     p.noStroke();
-    p.createCanvas(800 + radius, 200);
+    p.createCanvas(800 + radius, 100);
     p.frameRate(10);
     system = new ParticleSystem(p.createVector(p.width / 2, 50));
 
@@ -29,7 +29,7 @@ var sketch = function (p) {
   }
 
   p.draw = function () {
-    p.background(0);
+    p.background(255);
     //system.addParticle();
     system.run();
   }
@@ -146,6 +146,7 @@ var sketch = function (p) {
 
 
 new p5(sketch, window.document.getElementById('heat'));
+new p5(sketch, window.document.getElementById('heat2'));
 
 //////////////////////////////////////////////////////////////
 //*
