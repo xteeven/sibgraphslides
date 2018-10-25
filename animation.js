@@ -5,8 +5,8 @@
  */
 
 var sketch = function (p) {
-
-
+        
+        
 
   var system;
   var radius = 40;
@@ -69,7 +69,7 @@ var sketch = function (p) {
 
   };
 
-  // Method to display
+    // Method to display
   Particle.prototype.display = function () {
     p.fill(this.color, 90, 90);
     //fill(this.lifespan, 90, 90);
@@ -127,7 +127,7 @@ var sketch = function (p) {
       iter = 0;
     }
 
-    if (iter > 5) {
+    if(iter > 5 ){
       for (var i = this.particles.length - 1; i >= 0; i--) {
         var par = this.particles[i];
         par.run();
@@ -172,214 +172,184 @@ var mydata = [
     [5.0538, 5.6497, 3.6568, 5.6683],
     [3.5358, 0.0053, 0.0054, 0.5562]
 
-  ],
-  [
-    [22.5851, 27.4730, 27.4945, 26.2476],
-    [160.4200, 131.8100, 74.7942, 129.8190],
-    [8.6890, 10.7297, 6.2146, 10.4018],
-    [6.6513, 0.0088, 0.0088, 0.3174]
+  ],        [
+          [22.5851, 27.4730, 27.4945, 26.2476],
+          [160.4200, 131.8100, 74.7942, 129.8190],
+          [8.6890, 10.7297, 6.2146, 10.4018],
+          [6.6513, 0.0088, 0.0088, 0.3174]
 
-  ]
-];
+        ]
+      ];
 
-function createData(index) {
-  //bar chart data
-  var data2 = {
-    labels: ["vaporization", "condensation", "melting", "solidification"],
-    datasets: [
-      {
-        label: "Neighborhood search",
-        data: mydata[index][0],
-        backgroundColor: ["#FFEB3B", "#FFEB3B", "#FFEB3B", "#FFEB3B"
-        ],
-        borderColor: [
-          "#FFFF00", "#FFFF00", "#FFFF00", "#FFFF00"
-        ],
-        borderWidth: 1
-      },
-      {
-        label: "Constraint projection",
-        data: [20, 35, 40, 60],
-        data: mydata[index][1],
-        backgroundColor: [
-          "rgba(50,150,200,0.3)", "rgba(50,150,200,0.3)", "rgba(50,150,200,0.3)", "rgba(50,150,200,0.3)"
-        ],
-        borderColor: [
-          "rgba(50,150,200,1)", "rgba(50,150,200,1)", "rgba(50,150,200,1)", "rgba(50,150,200,1)"
-        ],
-        borderWidth: 1
-      },
-      {
-        label: "Heat transfer",
-        data: mydata[index][2],
-        backgroundColor: ["#F06292", "#F06292", "#F06292", "#F06292",
-        ],
-        borderColor: [
-          "#880E4F",
-          "#880E4F",
-          "#880E4F",
-          "#880E4F"
-        ],
-        borderWidth: 1
-      },
-      {
-        label: "Constraint manager",
-        data: mydata[index][3],
-        backgroundColor: [
-          "#FF9100",
-          "#FF9100",
-          "#FF9100",
-          "#FF9100"
-        ],
-        borderColor: [
-          "#FF9100",
-          "#FF9100",
-          "#FF9100",
-          "#FF9100"
-        ],
-        borderWidth: 1
+      function createData(index) {
+        //bar chart data
+        var data2 = {
+          labels: ["vaporization", "condensation", "melting", "solidification"],
+          datasets: [
+            {
+              label: "Neighborhood search",
+              fillColor: "rgba(255,235,59,0.3)",
+              strokeColor: "rgba(255,235,59,0.8)",
+              highlightFill: "rgba(255,235,59,0.75)",
+              highlightStroke: "rgba(255,235,59,1)",
+              data: mydata[index][0],
+            },
+            {
+              label: "Constraint projection",
+              fillColor: "rgba(50,150,200,0.3)",
+              strokeColor: "rgba(50,150,200,0.8)",
+              highlightFill: "rgba(50,150,200,0.75)",
+              highlightStroke: "rgba(50,150,200,1)",
+              data: mydata[index][1]
+            },
+            {
+              label: "Heat transfer",
+              fillColor: "rgba(240,98,146,0.3)",
+              strokeColor: "rgba(240,98,146,0.8)",
+              highlightFill: "rgba(240,98,146,0.75)",
+              highlightStroke: "rgba(240,98,146,1)",
+              data: mydata[index][2]
+            },
+            {
+              label: "Constraint manager",
+              fillColor: "rgba(255,145,0,0.3)",
+              strokeColor: "rgba(255,145,0,0.8)",
+              highlightFill: "rgba(255,145,0,0.75)",
+              highlightStroke: "rgba(255,145,0,1)",
+              data: mydata[index][3]
+            }
+          ]
+        };
+        return data2;
       }
-    ]
-  };
-  return data2;
-}
 
-//options
-function createOption(mytitle) {
-  var options2 = {
-    responsive: true,
-    title: {
-      display: true,
-      position: "top",
-      text: mytitle,
-      fontSize: 24,
-      fontColor: "#fff"
-    },
-    legend: {
-      display: true,
-      position: "bottom",
-      labels: {
-        fontColor: "fff",
-        fontSize: 18
-      }
-    },
-    scales: {
-      yAxes: [{
-        ticks: {
-          min: 0
-        }, fontColor: "#fff"
-      }]
-      , xAxes: [{
-        fontColor: "#fff"
-      }]
-    }
-  };
-  return options2;
-};
+      //options
+      function createOption(mytitle){
+        var options2 = {
+          responsive: true,
+          title: {
+            display: true,
+            position: "top",
+            text: mytitle,
+            fontSize: 24,
+            fontColor: "#fff"
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            labels: {
+              fontColor: "fff",
+              fontSize: 18
+            }
+          },
+          scales: {
+            yAxes: [{
+              fontColor: "#fff",
+              ticks: {
+                  min: 0,
+              },
+              
+              }]
+          }
+        };
+        return options2;
+      };
 
-var ctx2 = document.getElementById("myBar1").getContext("2d");
-var ctx3 = document.getElementById("myBar2").getContext("2d");
-var ctx4 = document.getElementById("myBar3").getContext("2d");
-var ctx5 = document.getElementById("myBar4").getContext("2d");
+      /*var ctx2 = document.getElementById("myBar1").getContext("2d");
+      var ctx3 = document.getElementById("myBar2").getContext("2d");
+      var ctx4 = document.getElementById("myBar3").getContext("2d");
+      var ctx5 = document.getElementById("myBar4").getContext("2d");
 
-//create Chart class object
-var chart = new Chart(ctx2, {
-  type: "bar",
-  data: createData(0),
-  options: createOption("8K particles")
-});
+      //create Chart class object
+      var chart = new Chart(ctx2, {
+        type: "bar",
+        data: createData(0),
+        options: createOption("8K particles")
+      });
 
-//create Chart class object
-new Chart(ctx3, {
-  type: "bar",
-  data: createData(1),
-  options: createOption("16K particles")
-});
-//create Chart class object
-new Chart(ctx4, {
-  type: "bar",
-  data: createData(2),
-  options: createOption("64K particles")
-});
-//create Chart class object
-new Chart(ctx5, {
-  type: "bar",
-  data: createData(3),
-  options: createOption("128K particles")
-});
+      //create Chart class object
+      new Chart(ctx3, {
+        type: "bar",
+        data: createData(1),
+        options: createOption("16K particles")
+      });
+      //create Chart class object
+      new Chart(ctx4, {
+        type: "bar",
+        data: createData(2),
+        options: createOption("64K particles")
+      });
+      //create Chart class object
+      new Chart(ctx5, {
+        type: "bar",
+        data: createData(3),
+        options: createOption("128K particles")
+      });*/
 
-
-
-
-///////////////////////////////////////////////
+//////////////////////////////////////////////
 var ctx = document.getElementById("myFunction");//.getContext("2d");
 var xLabel = [];
-var lim = 50;
-for (var i = 0; i <= lim; i += 0.2) {
+var lim = 20;
+var aum = .25;
+for (var i = 0; i <= lim; i += aum) {
   xLabel.push(i);
 }
-var data = {
-  labels: xLabel,
-  datasets: [
-    {
-      label: "Density",
-      function: function (x) {
-        return 1 - 1 / (1 + Math.pow((1 + (1 + 12 / lim)), lim / 2 - x));
+function createDataFunction() {
+  var data = {
+    labels: xLabel,
+    datasets: [
+      {
+        label: "Density",
+        function: function (x) {
+          return 1 - 1 / (1 + Math.pow((1 + (1 + 12 / lim)), lim / 2 - x));
+        },
+        fillColor: "black",
+        strokeColor: "rgba(255,235,59,0.8)",
+        //highlightFill: "rgba(255,235,59,0.75)",
+        //highlightStroke: "rgba(255,235,59,1)",
+        radius: 0,
+        data: [],
       },
-      borderColor: "rgba(255, 255, 255, 1)",
-      data: [],
-      fill: false,
-      pointRadius: 0
-    },
-    {
-      label: "Gravity",
-      function: function (x) {
-        return 10.8 / Math.log((lim + 0.02) / 0.02) * Math.log((lim + 0.02) / (lim + 0.02 - x)) - 9.8;
-        //return x * Math.log(x);
-      },
-      borderColor: "rgba(255, 0, 0, 1)",
-      data: [],
-      fill: false,
-      pointRadius: 0
-    }]
-};
+      {
+        label: "Gravity",
+        function: function (x) {
+          return 10.8 / Math.log((lim + 0.02) / 0.02) * Math.log((lim + 0.02) / (lim + 0.02 - x)) - 9.8;
+          //return x * Math.log(x);
+        },
+        "borderColor": "#0ff",
+        data: [],
+      }]
+  };
 
-Chart.pluginService.register({
-  beforeInit: function (chart) {
-    var data = chart.config.data;
-    for (var i = 0; i < data.datasets.length; i++) {
-      for (var j = 0; j < data.labels.length; j++) {
-        var fct = data.datasets[i].function,
-          x = data.labels[j],
-          y = fct(x);
-        data.datasets[i].data.push(y);
-      }
+  for (var i = 0; i < data.datasets.length; i++) {
+    for (var j = 0; j < data.labels.length; j++) {
+      var fct = data.datasets[i].function;
+      var x = data.labels[j];
+      var y = fct(x);
+      data.datasets[i].data.push(y);
     }
   }
-});
-
-var myBarChart = new Chart(ctx, {
-  type: 'line',
-  data: data,
-  options: {
+  return data;
+}
+function createOptionFunction(){
+  var options = {
+    responsive: true,
     scales: {
       yAxes: [{
-        ticks: {
-          beginAtZero: true,
-          fontColor: "#fff"
-        }
-      }],
+          ticks: {
+            beginAtZero: true
+          }
+        }],
       xAxes: [{
-        display: false,
-        fontColor: "#fff"
-      }]
+          display: false
+        }]
     },
     legend: {
       display: true,
       position: "bottom",
       labels: {
         fontColor: "#fff",
-        fontSize: 20
+        fontSize: 34
       }
     },
     title: {
@@ -389,7 +359,8 @@ var myBarChart = new Chart(ctx, {
       fontSize: 24,
       fontColor: "#fff"
     },
-  }
-});
-
-//*/
+    grid:true,
+  };
+  return options;
+}
+      
