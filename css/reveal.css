@@ -512,7 +512,7 @@ body {
 perspective: 600px }
 
 .reveal .slides > section,
-.reveal .slides > section > section {
+.reveal .slides > section  section {
   display: none;
   position: absolute;
   width: 100%;
