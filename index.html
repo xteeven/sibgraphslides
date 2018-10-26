@@ -39,9 +39,7 @@
 					Anderson <span style="color: red">Maciel</span> </div>
 			</section>
 
-
-			<section data-background-color="white">
-
+			<section>
 				<section data-background-image="images/melting.jpg" data-state="blur">
 					<h1 style="color:#000000bd">Melting</h1>
 					<object id="icon" data="images/3d.svg" type=""></object>
@@ -50,9 +48,9 @@
 				</section>
 				<section data-background-image="images/frozen.jpg" data-state="blur" data-background-color="white">
 					<h1 style="color:#000000bd">Freezing</h1>
-					<object id="icon" data="images/blur.svg" type=""></object>
-					<object id="icon" data="images/right-arrow.svg" alt=""></object>
-					<object id="icon" data="images/3d.svg"></object>
+					<object id="icon" data="images/3d.svg" type=""></object>
+					<object id="icon" data="images/left-arrow.svg" alt=""></object>
+					<object id="icon" data="images/blur.svg"></object>
 				</section>
 				<section data-background-image="images/evaporation.jpg" data-state="blur" data-background-color="white">
 					<h1 style="color:#000000bd">Evaporation</h1>
@@ -62,10 +60,18 @@
 				</section>
 				<section data-background-image="images/condensation.jpg" data-state="blur">
 					<h1 style="color:#ffffffbd">Condensation</h1>
-					<object id="icon" data="images/cloud-internet-symbolwhite.svg" type=""></object>
-					<object id="icon" data="images/right-arrowwhite.svg" alt=""></object>
-					<object id="icon" data="images/blurwhite.svg"></object>
+					<object id="icon" data="images/blur.svg" type=""></object>
+					<object id="icon" data="images/left-arrow.svg" alt=""></object>
+					<object id="icon" data="images/cloud-internet-symbol.svg"></object>
 				</section>
+			</section>
+
+			<section data-background-color="white">
+				<object height="500" data="images/intro1.png" type=""></object>
+			</section>
+
+			<section data-background-color="white">
+				<object height="500" data="images/intro2.png" type=""></object>
 			</section>
 			<section>
 				<h4>Related Works</h4>
@@ -77,7 +83,7 @@
 					</div>
 					<div id="right">
 						<div id="panel">
-						<div>Summary:</div>
+							<div>Summary:</div>
 							<ul>
 								<li>Melting</li>
 								<li><s>Solidifying</s></li>
@@ -89,11 +95,12 @@
 				</section>
 				<section data-background-video="Videos/Related/augmented.mp4" data-background-video-loop>
 					<div id="left">
-						<div id="panel">Augmented mpm for phase-change and varied materials.<br> <strong> Stomakhin et al. </strong><br><strong>(2014)</strong>
+						<div id="panel">Augmented mpm for phase-change and varied materials.<br> <strong>Stomakhin et al. </strong><br><strong>(2014)</strong>
 						</div>
 					</div>
 					<div id="right">
 						<div id="panel">
+							<div>Summary:</div>
 							<ul>
 								<li>Melting</li>
 								<li>Solidifying</li>
@@ -103,13 +110,15 @@
 						</div>
 					</div>
 				</section>
-				<section data-background-video="Videos/Related/evaporation.mp4" data-background-video-loop>
+				<section data-background-video="Videos/Related/evaporation.mp4" data-background-video-loop
+				 data-background-video-loop data-background-color="white">
 					<div id="left">
 						<div id="panel"> Evaporation and Condensation of SPH-based Fluids<br> <strong> Hochstetter and Kolb</strong><br><strong>(2017)</strong>
 						</div>
 					</div>
 					<div id="right">
 						<div id="panel">
+							<div>Summary:</div>
 							<ul>
 								<li><s>Melting</s></li>
 								<li><s>Solidifying</s></li>
@@ -126,6 +135,7 @@
 					</div>
 					<div id="right">
 						<div id="panel">
+							<div>Summary:</div>
 							<ul>
 								<li>Melting</li>
 								<li>Solidifying</li>
@@ -138,14 +148,66 @@
 			</section>
 
 			<section>
-				<h2>Our Solution</h2>
+				<h2 style="margin-bottom:50px">Our Solution</h2>
+				<div class="line">Melting <br>
+					<div class="line"> <object class="iconmini" data="images/3dwhite.svg" type=""></object>
+						<object class="iconmini" data="images/right-arrowwhite.svg" alt=""></object>
+						<object class="iconmini" data="images/blurwhite.svg"></object></div>
+				</div>
+				<div class="line">Solidifying <br>
+					<div class="line"> <object class="iconmini" data="images/3dwhite.svg" type=""></object>
+						<object class="iconmini" data="images/left-arrowwhite.svg" alt=""></object>
+						<object class="iconmini" data="images/blurwhite.svg"></object></div>
+				</div>
+				<div class="line">Vaporization <br>
+					<div class="line"> <object class="iconmini" data="images/blurwhite.svg" type=""></object>
+						<object class="iconmini" data="images/right-arrowwhite.svg" alt=""></object>
+						<object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object></div>
+				</div>
+				<div class="line">Condensation <br>
+					<div class="line"> <object class="iconmini" data="images/blurwhite.svg" type=""></object>
+						<object class="iconmini" data="images/left-arrowwhite.svg" alt=""></object>
+						<object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object></div>
+				</div>
+
 				<ul>
-					<li>Melting</li>
-					<li>Solidifying</li>
-					<li>Vaporization</li>
-					<li class="fragment highlight-current-blue">Condensation</li>
-					<li class="fragment highlight-red">Full Lagrangian</li>
+					<li class="fragment highlight-current-red">Main phase transitions</li>
+					<li class="fragment highlight-current-red">Full Lagrangian</li>
+					<li class="fragment highlight-current-red">Low computational cost</li>
+					<li class="fragment highlight-current-red">Interactive</li>
 				</ul>
+			</section>
+			<section>
+
+				<div id="left" style="font-size: 1em;text-align:right">
+					<div>Position-based dynamic</div>
+					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
+					<div>Position-based fluids</div>
+					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
+					<div>Heat transfer</div>
+					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
+					<div>Phase coupling</div>
+					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
+					<div>Transition coupling</div>
+				</div>
+				<div id="right" style="font-size: 1em;text-align:center;">
+					<div class="fragment">
+						<object class="iconmini" data="images/3dwhite.svg" alt=""></object></div> <br>
+					<div class="fragment">
+						<object class="iconmini" data="images/blurwhite.svg" alt=""></object><object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object>
+					</div><br>
+					<div class="fragment"><object class="iconmini" data="images/thermometer.svg" type=""></object></div> <br>
+					<div class="fragment line"> <object class="iconmini" data="images/3dwhite.svg" type=""></object> +
+						<object class="iconmini" data="images/blurwhite.svg"></object>+<object style="margin-left:10px" class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object></div><br><br>
+					<div class=" fragment line">
+						<object class="iconmini" data="images/3dwhite.svg" type=""></object>
+						<object class="iconmini" data="images/doublearrow.png" alt=""></object>
+						<object class="iconmini" data="images/blurwhite.svg"></object>
+						<object class="iconmini" data="images/doublearrow.png" alt=""></object>
+						<object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object>
+					</div>
+
+				</div>
 			</section>
 			<section data-background-color="white">
 				<section data-background-color="white">
@@ -206,11 +268,6 @@
 						</li>-->
 					</ul>
 				</section>
-				<section data-background-color="white">
-					<h4>Solid Bodies</h4>
-					<img src="images/distance.PNG" style="height: 7em; width: auto;">
-					<div>$C(x_{1},x_{2}) = \mid x_{1} - x_{2}\mid - l_{0}$</div>
-				</section>
 			</section>
 
 			<section data-background-color="white">
@@ -228,12 +285,12 @@
 
 					<div>
 						<div id="left">
-							<div class="fragment" data-fragment-index="1" style="color:red">Particle </div>
-							<div class="fragment" data-fragment-index="3" style="color:green">Distance between particles</div>
+							<div style="color:red">Particle </div>
+							<div style="color:green">Distance between particles</div>
 						</div>
 						<div id="right">
-							<div class="fragment" data-fragment-index="2" style="color:blue"> Neighbors </div>
-							<div class="fragment" data-fragment-index="4" style="color:rgb(150, 30, 150)">Kernel influence </div>
+							<div style="color:blue"> Neighbors </div>
+							<div style="color:rgb(150, 30, 150)">Kernel influence </div>
 						</div>
 					</div>
 
@@ -245,8 +302,8 @@
 						<div id="right"> <img src="images/SPH2.png" style="height: 7em; width: auto;">
 						</div>
 					</div>
-					<div> $A \left( \textbf{x} \right) = \sum_{j} m_{j} \frac{A_{j}}{\rho_{j}}$ <div class="fragment highlight-violet"
-						 style="display:inline-block;"> $W\left(\textbf{x} - \textbf{x}_{j} , h\right)$ </div>
+					<div> $A \left( \textbf{x} \right) = \sum_{j} m_{j} \frac{A_{j}}{\rho_{j}}$ <div style="display:inline-block; color: darkviolet">
+							$W\left(\textbf{x} - \textbf{x}_{j} , h\right)$ </div>
 					</div>
 				</section>
 
@@ -267,40 +324,18 @@
 					<h4 class="fragment fade-in" style="color:red" data-fragment-index="2">Position-based fluids</h4>
 				</section>
 			</section>
-
-			<section>
-				<div>
-					<h4>Phase coupling</h4>
-					<div>
-						$\rho_{i}=$
-						<div class="fragment highlight-red" style="display:inline-block" data-fragment-index="2">$\sum_{j} m_{j} W_{ij}$</div>
-						$+$
-						<div class="fragment highlight-green" style="display:inline-block" data-fragment-index="3">$\sum_{k}m_{k} W_{ik}$</div>
-						$+$
-						<div class="fragment highlight-blue" style="display:inline-block" data-fragment-index="4">$\sum_{b}\frac{\rho_{0}}{\delta_{b}}
-							W_{ib}$</div>
-					</div>
-
-
-					<div style="display:inline-block;color:red" class="fragment" data-fragment-index="2">Solid</div>
-					<div style="display:inline-block;color:greenyellow" class="fragment" data-fragment-index="3">Fluid</div>
-					<div style="display:inline-block;color:rgba(52, 99, 255, 0.829)" class="fragment" data-fragment-index="4">Boundaries</div>
-
-				</div>
-			</section>
-
 			<section>
 
 				<h4>Heat transfer</h4>
 
 				<!--	<section>
-			 		<div id="heat"></div>
-					<div> Explicit scheme:
-						\begin{equation}
-						\left(\frac{dT}{dt}\right)=2\phi\sum_{j}\frac{m_j}{\rho_j}\left( T_{j} -T_{j} \right) \nabla W_{ij}
-						\end{equation}</div>
-				</section>-->
-				<section>
+						 <div id="heat"></div>
+						<div> Explicit scheme:
+							\begin{equation}
+							\left(\frac{dT}{dt}\right)=2\phi\sum_{j}\frac{m_j}{\rho_j}\left( T_{j} -T_{j} \right) \nabla W_{ij}
+							\end{equation}</div>
+					</section>-->
+				<section section data-background-color="white">
 					<div> Cleary et al. scheme:</div>
 					<div>
 						\begin{equation}
@@ -317,14 +352,49 @@
 						\end{equation}</div>
 				</section>
 				<!-- <section>
-					\begin{equation}
-					S \! tate = \begin{cases}
-					S\!olid & T_{i} < T_{m}, \\ Phase \; change_{m-f} & T_{i}=T_{m} \\ Fluid & T_{m} < T_{i} < T_{e} \\ Phase \;
-					 change_{e-c} & T_{i}=T_{e} \\ Gas & T_{i}> T_{e}
-						\end{cases}
-						\end{equation}
-				</section> -->
+						\begin{equation}
+						S \! tate = \begin{cases}
+						S\!olid & T_{i} < T_{m}, \\ Phase \; change_{m-f} & T_{i}=T_{m} \\ Fluid & T_{m} < T_{i} < T_{e} \\ Phase \;
+						 change_{e-c} & T_{i}=T_{e} \\ Gas & T_{i}> T_{e}
+							\end{cases}
+							\end{equation}
+					</section> -->
 			</section>
+			<section>
+				<section>
+					<h4>Solid Bodies</h4>
+					<img src="images/distanceblack.PNG" style="height: 7em; width: auto;">
+					<div>$C(x_{1},x_{2}) = \mid x_{1} - x_{2}\mid - l_{0}$</div>
+				</section>
+				<section>
+					<div>
+						<h4>Phase coupling</h4>
+						<div>
+							<div class="line">
+								<div>$\rho_{i}=$</div>
+							</div>
+
+							<div class="line">
+								<div style="color:red" class="fragment" data-fragment-index="2">Solid</div>
+								<div class="line fragment highlight-red" data-fragment-index="2">$\sum_{j} m_{j} W_{ij}$</div>
+							</div>
+							$+$
+							<div class="line">
+								<div style="color:greenyellow" class="fragment" data-fragment-index="3">Fluid</div>
+								<div class="line fragment highlight-green" data-fragment-index="3">$\sum_{k}m_{k}
+									W_{ik}$</div>
+							</div>
+							$+$
+							<div class="line">
+								<div style="color:rgba(52, 99, 255, 0.829)" class="fragment" data-fragment-index="4">Boundaries</div>
+								<div class="line fragment highlight-blue" data-fragment-index="4">$\sum_{b}\frac{\rho_{0}}{\delta_{b}}
+									W_{ib}$</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
+
 
 			<section>
 				<h4>Transition Coupling</h4>

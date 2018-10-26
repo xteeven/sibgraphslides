@@ -981,6 +981,7 @@ transform:  translateZ(-90px) rotateX(65deg) }
   text-align: center; }
 
 .no-transforms .reveal .controls,
+.no-transforms .reveal .logo,
 .no-transforms .reveal .progress {
   display: none !important; }
 
@@ -1569,6 +1570,7 @@ transform:  translateZ(-90px) rotateX(65deg) }
           backface-visibility: visible !important; }
 
 .zoomed .reveal .progress,
+.zoomed .reveal .logo,
 .zoomed .reveal .controls {
   opacity: 0; }
 
@@ -1580,9 +1582,8 @@ transform:  translateZ(-90px) rotateX(65deg) }
 /*********************************************
  * Logo Inf
  *********************************************/
-
  .reveal .logo {
-  position: fixed;
+  position: absolute;
   display: block;
   right: 8px;
   bottom: 8px;
@@ -1686,5 +1687,30 @@ animation: colors 10s ease-in-out infinite
 }
 
 #icon{
-  width: 5em
+  width: 3em
+}
+
+.icontainer{
+  display: inline-block;
+  display: -moz-inline-box;
+  *display: inline; /* For IE7 */
+  zoom: 1; /* Trigger hasLayout */
+  width: 80%;
+  text-align: center;
+
+}
+
+.line{
+  display:inline-block;
+
+}
+.iconmini{
+  width: 1em
+}
+
+
+
+.reveal.has-light-background h4{
+color: #000;
+
 }
