@@ -1640,33 +1640,51 @@ t {
 }
 
 .circlec {
+
   border-radius: 50%;
   width: 50px;
   height: 50px;
   position: relative;
   border: 20px solid green;
   background: white;
+  display: inline-block;
+  left: 0%;
 }
 
 .leftc {
-  left: 20%;
+  left: -10%;
   top: 50%;
   background: white;
   animation: toRight 3s ease infinite
 }
 
 .rightc {
-  left: 60%;
+  left: 10%;
   top: 50%;
 background: white;
   animation: toLeft 3s ease infinite
 }
 
 .statesc{
-left: 50%;
+left: 0%;
 animation: colors 10s ease-in-out infinite
-
 }
+
+.centerc{
+  left: 0%;
+  animation: colorsinv 10s ease-in-out infinite
+  }
+
+.leftcc{
+    left: -5%;
+    animation: colorsinvl 10s ease-in-out infinite
+    }
+.rightcc{
+      left: -5%;
+      animation: colorsinvr 10s ease-in-out infinite
+      }
+
+  
 @keyframes colors {
   0%{background: orange}
   25%{background: yellow}
@@ -1674,16 +1692,45 @@ animation: colors 10s ease-in-out infinite
   100%{background: rgb(85, 201, 255)}
 }
 
+@keyframes colorsinv {
+  100%{background: red;}
+  32%{background: red;}
+  24%{background: orange;}
+  16%{background: yellow;} 
+  8%{background: green;}
+  0%{background: rgb(85, 201, 255)}
+}
+
+@keyframes colorsinvl {
+  100%{background: red; left: -15%}
+  80%{background: red;  left: -15%}
+  70%{background: red; left: -5%}
+  51%{background: orange; left: -5%}
+  34%{background: yellow; left: -5%} 
+  17%{background: green;  left: -5%}
+  0%{background: rgb(85, 201, 255);  left: -5%}
+}
+
+@keyframes colorsinvr {
+  100%{background: red; left: 15%}
+  50%{background: red;  left: 15%}
+  40%{background: red; left: 5%} 
+  30%{background: orange; left: 5%} 
+  20%{background: yellow;  left: 5%}
+  10%{background: green;  left: 5%}
+  0%{background: rgb(85, 201, 255);  left: 5%}
+}
+
 @keyframes toRight {
-  0%{left: 20%; background: #000}
-  50%{left: 40%;  background: white}
-  100%{left: 20%;  background: #000}
+  0%{left: -15%; background: #000}
+  50%{left: -0%;  background: white}
+  100%{left: -15%;  background: #000}
 }
 
 @keyframes toLeft {
-  0%{left: 60%}
-  50%{left: 45%}
-  100%{left: 60%}
+  0%{left: 15%}
+  50%{left: 0%}
+  100%{left: 15%}
 }
 
 #icon{
