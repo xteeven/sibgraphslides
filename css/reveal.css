@@ -1694,7 +1694,7 @@ animation: colors 10s ease-in-out infinite
 
   
 @keyframes colors {
-  0%{background: orange}
+  0%{background: red}
   25%{background: yellow}
   50%{background: green}
   100%{background: rgb(85, 201, 255)}

@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>Heat-based bidirectional phase shifting simulation using position-based dynamicstitle></title>
+	<title>Heat-based bidirectional phase shifting simulation using position-based dynamics></title>
 
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/ownblack.css">
@@ -45,10 +45,13 @@
 			<section data-background-color="white"><img src="images/logo.png" style="height: 7em; width: auto;"></section>
 			<section>
 				<h3>Heat-based bidirectional phase shifting simulation using position-based dynamics</h3>
-				<div style="color: rgb(192, 192, 192)"><strong>Steeven <span style="color: red">Villa Salazar</span></strong>; Jose
+				<div style="color: rgb(192, 192, 192)"><strong>Steeven <span style="color: red">Villa Salazar *</span></strong>; Jose
 					Abel
-					<span style="color: red">Ticona</span>; Rafael <span style="color: red">Torchelsen</span>; Luciana <span style="color: red">Nedel</span>;
-					Anderson <span style="color: red">Maciel</span> </div>
+					<span style="color: red">Ticona *</span>; Rafael <span style="color: red">Torchelsen<sup>+</sup></span>; Luciana <span style="color: red">Nedel *</span>;
+					Anderson <span style="color: red">Maciel *</span> </div>
+
+					<div style="font-size:0.7em">* Universidade Federal do Rio Grande do Sul <br>
+					<sup>+ Universidade Federal de Pelotas</sup></div>
 			</section>
 
 			<section>
@@ -57,7 +60,10 @@
 				</div>
 				<section data-background-image="images/melting.jpg" data-state="blur">
 					<aside class="notes">
-							
+						<ul><li>Phase-shifting phenomena is present in our day to day life</li>
+						<li>in process like the melting of an ice cream.</li>
+					<li>that is the change from solid to liquid.</li></ul>
+							  
 					</aside>
 					<h1 style="color:#000000bd">Melting</h1>
 					<object id="icon" data="images/3d.svg" type=""></object>
@@ -65,18 +71,33 @@
 					<object id="icon" data="images/blur.svg"></object>
 				</section>
 				<section data-background-image="images/frozen.jpg" data-state="blur" data-background-color="white">
+					<aside class="notes">
+						<ul>
+							<li>Or the freezing of the water when in winter,</li>
+							<li>is the process from the liquid to solid</li>
+							<li>the inverse process of melting</li>
+						</ul>
+						  </aside>
 					<h1 style="color:#000000bd">Freezing</h1>
 					<object id="icon" data="images/3d.svg" type=""></object>
 					<object id="icon" data="images/left-arrow.svg" alt=""></object>
 					<object id="icon" data="images/blur.svg"></object>
 				</section>
 				<section data-background-image="images/evaporation.jpg" data-state="blur" data-background-color="white">
+					<aside class="notes">
+						<ul>
+							<li>
+									Also when the water boils and change its state from liquid to gas
+						</li>
+					</ul>
+						</aside>
 					<h1 style="color:#000000bd">Evaporation</h1>
 					<object id="icon" data="images/blur.svg" type=""></object>
 					<object id="icon" data="images/right-arrow.svg" alt=""></object>
 					<object id="icon" data="images/cloud-internet-symbol.svg"></object>
 				</section>
 				<section data-background-image="images/condensation.jpg" data-state="blur">
+					<aside class="notes">or even when the inverse process occurs, being this condensation. </aside>
 					<h1 style="color:#ffffffbd">Condensation</h1>
 					<object id="icon" data="images/blur.svg" type=""></object>
 					<object id="icon" data="images/left-arrow.svg" alt=""></object>
@@ -86,19 +107,21 @@
 			<section data-background-color="white">
 				<h1 class="mytitle"> Introduction </h1>
 				<section data-background-color="white" style="min-height:700px!important">
-
+					<aside class="notes"> <ul><li>As a real world phenomena, these process represents a compelling challenge for aplications like virtual reality or videogames.</li>
+					<li>But there are some limitations in the traditional techniques used to simulate phase shifting phenomena, for instance:</li> <li> the computational cost or the time taken by the simulations.</li><li>Methods as finite elements or computational fluids hydrodynamics, based in the navier-stokes equations, are accurated modeling these phenomena, but are hard to implement in real-time aplications</li><li> other methods as mass-spring models or kinematic simulation are just very far from the original behavior of the phenomena.</li> <li>Anhoter cases are good for rendering but, again, not so good to perform a real-time simulation.</li></ul>  </aside>
 					<img src="images/intro1.png" style="height: 500px;height: 500px;margin: 5% auto 0;"></img>
 				</section>
 
-				<section data-background-color="white" style="min-height:700px!important">
+				<!-- <section data-background-color="white" style="min-height:700px!important">
 					<img src="images/intro2.png" style="height: 500px;height: 500px;margin: 5% auto 0;"></img>
-				</section>
+				</section>-->
 			</section>
 			<section>
 				<h4>Related Works</h4>
 				<h1 class="mytitle"> Introduction </h1>
 				<section data-background-video="Videos/Related/physically.mp4" data-background-video-loop
 				 data-background-video-loop data-background-color="white">
+				 <aside class="notes"><ul><li>Here is when we start looking at the relatively new techniques available in the literature to simulate this kind of problems.</li><li>Looking at the recent works in simulation we found several publications addressing, most of them, one transition or even two.</li><li></li> Or simply addressing other problems and showing some of the mentioned phase transitions as consequence of other implementations.</ul>   </aside>
 					<div id="left">
 						<div id="panel">A physically consistent implicit viscosity
 							solver for SPH fluids<br> <strong> Weiler M et al.</strong><br><strong>(2018)</strong></div>
@@ -116,8 +139,9 @@
 					</div>
 				</section>
 				<section data-background-video="Videos/Related/augmented.mp4" data-background-video-loop>
+					<aside class="notes"> The most common transitions  in literature are melting and Solidifying but transitions as: </aside>
 					<div id="left">
-						<div id="panel">Augmented mpm for phase-change and varied materials.<br> <strong>Stomakhin et al. </strong><br><strong>(2014)</strong>
+						<div id="panel">Augmented mpm for phase-change and varied materials.<br> <br> <strong>Stomakhin et al. </strong><br><strong>(2014)</strong>
 						</div>
 					</div>
 					<div id="right">
@@ -134,6 +158,7 @@
 				</section>
 				<section data-background-video="Videos/Related/evaporation.mp4" data-background-video-loop
 				 data-background-video-loop data-background-color="white">
+				 <aside class="notes"> Evaporation or condensation are less frequently addressed, specially condensation.  </aside>
 					<div id="left">
 						<div id="panel"> Evaporation and Condensation of SPH-based Fluids<br> <strong> Hochstetter and Kolb</strong><br><strong>(2017)</strong>
 						</div>
@@ -151,8 +176,9 @@
 					</div>
 				</section>
 				<section data-background-video="Videos/Related/efficient.mp4" data-background-video-loop data-background-color="white">
+					<aside class="notes"> that is not took into account very often because, in real life, is also less common </aside>
 					<div id="left">
-						<div id="panel"> An efficient heat-based model for solid-liquid-gas phase transition and dynamic interaction. <br><br><strong>(2017)</strong>
+						<div id="panel"> An efficient heat-based model for solid-liquid-gas phase transition and dynamic interaction. <br><strong>(2017)</strong>
 							<strong> Gao Y et al. </strong> </div>
 					</div>
 					<div id="right">
@@ -170,7 +196,7 @@
 			</section>
 
 			<section style="min-height:700px!important">
-
+				<aside class="notes"> So, un our work we propose a model that includes the main phase transition by mean of a full lagrangian model, this is: using an unified model based in particles and not in meshes, this to get the desired results with a low computational cost and in interactive rates. </aside>
 				<h2 style="margin-bottom:50px">Our Solution</h2>
 
 				<div class="line">Melting <br>
@@ -202,10 +228,12 @@
 				</ul>
 			</section>
 			<section style="min-height:700px!important">
-
+				<aside class="notes"> The main components of our model are the following:
+					firts we use position based dynamics to model solid phases, second: we model the fluids using position based fluids, then we transport the heat among the particles, next we couple the phases, this is, we make the phases interact and finally we couple the transitions to the phases, this means, we introduce the phase transitions to the particle system. so, lets start with the solids
+				</aside>
 				<div><b> Outline </b></div>
 				<div id="left" style="font-size: 1em;text-align:right">
-					<div class="fragment highlight-current-red" data-fragment-index="6">Position-based dynamic</div>
+					<div style="color:red" data-fragment-index="6">Position-based dynamic</div>
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
 					<div>Position-based fluids</div>
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
@@ -217,33 +245,19 @@
 				</div>
 				<div id="right" style="font-size: 1em;text-align:center;">
 					<div class="fragment" data-fragment-index="1">
-						<object class="iconmini" data="images/3dwhite.svg" alt=""></object></div> <br>
-					<div class="fragment" data-fragment-index="2">
-						<object class="iconmini" data="images/blurwhite.svg" alt=""></object><object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object>
-					</div><br>
-					<div class="fragment" data-fragment-index="3"><object class="iconmini" data="images/thermometer.svg" type=""></object></div>
-					<br>
-					<div class="fragment line" data-fragment-index="4"> <object class="iconmini" data="images/3dwhite.svg" type=""></object>
-						+
-						<object class="iconmini" data="images/blurwhite.svg"></object>+<object style="margin-left:10px" class="iconmini"
-						 data="images/cloud-internet-symbolwhite.svg"></object></div><br><br>
-					<div class=" fragment line" data-fragment-index="5">
-						<object class="iconmini" data="images/3dwhite.svg" type=""></object>
-						<object class="iconmini" data="images/doublearrow.png" alt=""></object>
-						<object class="iconmini" data="images/blurwhite.svg"></object>
-						<object class="iconmini" data="images/doublearrow.png" alt=""></object>
-						<object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object>
-					</div>
+						<object class="iconmini" data="images/3dwhite.svg" alt=""></object></div>
 				</div>
 			</section>
 			<section data-background-color="white">
 				<h1 class="mytitle"> Background </h1>
 				<section data-background-color="white">
+						<aside class="notes"> Position-based dynamics is a metodology introduced by mathias muller in two thousand twenty six, and in a certain way, changes the paradigm of the physic-based simulation...</aside>
 					<h2>PBD</h2>
 					<h3>Position-based Dynamics (2006)</h3>
 					<div>Matthias Müller et al.</div>
 				</section>
 				<section data-transition="fade" data-background-color="white">
+						<aside class="notes"> Because changes the way how we calculate virtual physics-behaviors. we could say that he inverted the order to calculate the velocities and positions inside the simulation. to give a bit of contexts: traditional simulations starts from accelerations, caused by forces, and just after that, velocities are calculated to finally calculate the positions within a timestep of simulation. THIS IS AN INTEGRATION PROBLEM WHEN WE NEED TO GO FROM ACELERATIONS TO POSITIONS. and this implies instability when for instance, we choose constants who can overshoot our sistem or the other extreme, other value could make squashy. this also implies tha our timestep must be small enougth to make stable the system</aside>
 					<strong>Impulse-based</strong> <br>
 					<div class="line">
 						<img src="images/i1.PNG" style="height: 4.5em; width: auto;"><br>
@@ -266,6 +280,7 @@
 					</div>
 				</section>
 				<section data-transition="fade" data-background-color="white">
+						<aside class="notes"> And this is when inverting the order of the calculations makes sense: position based dynamics starts correcting the position of the particles and then proceeds calculating the velocities, this help us to avoid overshoots and give us full control of the position where the particles are. AND THIS, IN CONSTRAST OF THE CLASICAL APPROACH, IS NOT AN INTEGRATION PROBLEM BUT AN OPTIMIZATION PROBLEM, let me explain that better:</aside>
 					<strong>Position-based</strong> <br>
 					<div class="line">
 						<img src="images/PBD1.PNG" style="height: 4.5em; width: auto;"><br>
@@ -287,7 +302,7 @@
 					</div>
 				</section>
 				<section data-background-color="white">
-
+						<aside class="notes"> PBD Is constraint-based, this means that the space where a particle could move, is given by a serie of limitations. And the particle just can change his position inside this domain. We say that a constraint is satisfied when its result is zero. To make this constrains be zero, we use the gradient of the constraint (that is the space when the particle could move) and a correction factor that aproximates the next position of the particle. </aside>
 					<ul>
 						<li>
 							<div> Constraint-Based</div> <br>
@@ -311,20 +326,21 @@
 						</li>-->
 					</ul>
 				</section>
-				<section data-background-color="white">
+				<!-- <section data-background-color="white">
+						<aside class="notes"> which brings some problens to the simulation, the main problem appears when we try to solve the constrainst in a particle. As our problem is not linear and our solver is linear, we dont have an exact solution but, iterative aproximations. This, in practical terms means that if we dont have a certain number of iterations, our solution will not be very good. In visual terms, our solid bodies will not look as solids but as deformable bodies. This was solved used Extended position-based dynamics, that uses the inverse of the stiffness to aproximate rigid bodies even with few iterations</aside>
 					<h4>Drawbacks</h4>
 
 					<div>Stiffness</div>
 					<img src="images/stiffnes.png" style="height: 8em;" alt="">
-					<div class="fragment">xPBD</div>
-				</section>
+					<div class="fragment">xPBD (2016)</div>
+				</section>-->
 			</section>
 			<section style="min-height:700px!important">
 				<div><b> Outline </b></div>
 				<div id="left" style="font-size: 1em;text-align:right">
 					<div style="color:red">Position-based dynamic</div>
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
-					<div class="fragment highlight-current-red">Position-based fluids</div>
+					<div style="color:red">Position-based fluids</div>
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
 					<div>Heat transfer</div>
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
@@ -333,25 +349,15 @@
 					<div>Transition coupling</div>
 				</div>
 				<div id="right" style="font-size: 1em;text-align:center;">
-					<div>
+					<div  data-fragment-index="1">
 						<object class="iconmini" data="images/3dwhite.svg" alt=""></object></div> <br>
-					<div>
+					<div class="fragment" data-fragment-index="1">
 						<object class="iconmini" data="images/blurwhite.svg" alt=""></object><object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object>
 					</div><br>
-					<div><object class="iconmini" data="images/thermometer.svg" type=""></object></div> <br>
-					<div> <object class="iconmini" data="images/3dwhite.svg" type=""></object> +
-						<object class="iconmini" data="images/blurwhite.svg"></object>+<object style="margin-left:10px" class="iconmini"
-						 data="images/cloud-internet-symbolwhite.svg"></object></div><br>
-					<div>
-						<object class="iconmini" data="images/3dwhite.svg" type=""></object>
-						<object class="iconmini" data="images/doublearrow.png" alt=""></object>
-						<object class="iconmini" data="images/blurwhite.svg"></object>
-						<object class="iconmini" data="images/doublearrow.png" alt=""></object>
-						<object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object>
-					</div>
 				</div>
 			</section>
 			<section data-background-color="white" style="min-height:700px!important">
+					<aside class="notes"> Now lets speak about the fluid phases, liquid and gas. As we wanted to use particles to model all the bodies, our fluid particle system is based on smoothed particle hydrodynamics.</aside>
 				<h1 class="mytitle"> Background </h1>
 				<section data-background-color="white">
 					<h2>SPH</h2>
@@ -359,6 +365,7 @@
 					<div>Gingold y Monaghan (1977)</div>
 				</section>
 				<section data-background-color="white">
+						<aside class="notes"> Works, calculating all the magnitudes of each particle depending on the Neighboring particles. lets look at this image, the red dot in the center is our interest particle, and the blue particleas around are its Neighborhood, the purple volume is a representation of the kernel. the kernel defines how a Neighboring porticle influence the final value of our red particle, depending on the distance between particles. So, if we start from this equation, we can get the density of a particle depending on his its surrounding particles</aside>
 					<div>
 						<div id="left"> <img src="images/SPH1.png" style="height: 7em; width: auto;">
 						</div>
@@ -374,11 +381,12 @@
 						<div id="right">
 							<div style="color:blue"> Neighbors </div>
 							<div style="color:rgb(150, 30, 150)">Kernel influence </div>
-						</div>
+						</div>	
 					</div>
 
 				</section>
 				<section data-background-color="white">
+						<aside class="notes"> Now with this expression it is possible to put inside a position-based constraint, this let us integrate the fluid behavior in our model. This integration is called position based fluids. and it is what we use to model fluids inside our model</aside>
 					<div>
 						<div id="left"> <img src="images/SPH1.png" style="height: 7em; width: auto;">
 						</div>
@@ -409,7 +417,7 @@
 								\end{equation}</div>
 						</div> <br>
 					</div>
-					<h4 class="fragment fade-in" style="color:red" data-fragment-index="2">Position-based fluids</h4>
+					<h4 class="fragment fade-in" style="color:red" data-fragment-index="2">Position-based fluids (2013) </h4> <div class="fragment fade-in" data-fragment-index="2" style="color:red"> Miles Macklin et al</div>
 				</section>
 
 			</section>
@@ -420,29 +428,20 @@
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
 					<div style="color:red">Position-based fluids</div>
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
-					<div class="fragment highlight-current-red">Heat transfer</div>
+					<div style="color:red">Heat transfer</div>
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
 					<div>Phase coupling</div>
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
 					<div>Transition coupling</div>
 				</div>
 				<div id="right" style="font-size: 1em;text-align:center;">
-					<div>
+					<div >
 						<object class="iconmini" data="images/3dwhite.svg" alt=""></object></div> <br>
-					<div>
+					<div >
 						<object class="iconmini" data="images/blurwhite.svg" alt=""></object><object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object>
 					</div><br>
-					<div><object class="iconmini" data="images/thermometer.svg" type=""></object></div> <br>
-					<div> <object class="iconmini" data="images/3dwhite.svg" type=""></object> +
-						<object class="iconmini" data="images/blurwhite.svg"></object>+<object style="margin-left:10px" class="iconmini"
-						 data="images/cloud-internet-symbolwhite.svg"></object></div><br>
-					<div>
-						<object class="iconmini" data="images/3dwhite.svg" type=""></object>
-						<object class="iconmini" data="images/doublearrow.png" alt=""></object>
-						<object class="iconmini" data="images/blurwhite.svg"></object>
-						<object class="iconmini" data="images/doublearrow.png" alt=""></object>
-						<object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object>
-					</div>
+					<div class="fragment" data-fragment-index="1"><object class="iconmini" data="images/thermometer.svg" type=""></object></div>
+					
 				</div>
 			</section>
 			<section data-background-color="white" style="min-height:700px!important">
@@ -457,7 +456,8 @@
 							\end{equation}</div>
 					</section>-->
 				<section section data-background-color="white">
-					<div> Cleary et al. scheme:</div>
+						<aside class="notes"> to control how temperature spreads among particles we tested first an explicit model, using the main equation of SPH, but we decide to implement the cleary model, who is well know in the literature for its stability and also because it uses thermal conductivity and specific heat, that is good because give us freedom to create different material interactions </aside>
+					<div> Cleary et al. (1999) scheme:</div>
 					<div>
 						\begin{equation}
 						\left(\frac{dT}{dt}\right)=\frac{V_{i}}{ m_{i} c_{i} } \sum_{j} \frac{4k_{i}k_{j}}{k_{i}+k_{j}}V_{j}\left(
@@ -466,6 +466,7 @@
 					<div id="heat"></div>
 				</section>
 				<section data-background-color="white">
+						<aside class="notes"> So, lets speak now about heat, there are sensible heat and latent heat, sensible heat is temperature, the magnitude you can feel, and measure with a thermometer. but phase transitions doesnt occur when temperature is rising, it occurs when latent heat is rising. You can see in this graphic how its behavior is. when the line is totally horizontal, the phase-shifting begins and we have two variables to manage this, Latent heat of evaporation-condensation and latent heat of melting-fusion. So for we accumulate the latent heat and based on the latent heat we perform the phase change.</aside>
 					<div>Latent Heat</div>
 					<img src="images/latent.PNG" style="height: 10em; width: auto;">
 					<div>\begin{equation}
@@ -490,32 +491,29 @@
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
 					<div style="color:red">Heat transfer</div>
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
-					<div class="fragment highlight-current-red">Phase coupling</div>
+					<div style="color:red">Phase coupling</div>
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
 					<div>Transition coupling</div>
 				</div>
 				<div id="right" style="font-size: 1em;text-align:center;">
-					<div>
+					<div >
 						<object class="iconmini" data="images/3dwhite.svg" alt=""></object></div> <br>
-					<div>
+					<div >
 						<object class="iconmini" data="images/blurwhite.svg" alt=""></object><object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object>
 					</div><br>
-					<div><object class="iconmini" data="images/thermometer.svg" type=""></object></div> <br>
-					<div> <object class="iconmini" data="images/3dwhite.svg" type=""></object> +
+					<div ><object class="iconmini" data="images/thermometer.svg" type=""></object></div>
+					<br>
+					<div class="fragment line" data-fragment-index="1"> <object class="iconmini" data="images/3dwhite.svg" type=""></object>
+						+
 						<object class="iconmini" data="images/blurwhite.svg"></object>+<object style="margin-left:10px" class="iconmini"
-						 data="images/cloud-internet-symbolwhite.svg"></object></div><br>
-					<div>
-						<object class="iconmini" data="images/3dwhite.svg" type=""></object>
-						<object class="iconmini" data="images/doublearrow.png" alt=""></object>
-						<object class="iconmini" data="images/blurwhite.svg"></object>
-						<object class="iconmini" data="images/doublearrow.png" alt=""></object>
-						<object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object>
-					</div>
+						 data="images/cloud-internet-symbolwhite.svg"></object></div>
 				</div>
 			</section>
 			<section>
+					
 				<h1 class="mytitle"> Method </h1>
 				<section>
+						<aside class="notes"> To couple each phase (Solid plus liquid plus gas), we calculate the density constraint in each fluid particle taking into account the influence of every particle in the scenario. in this way, solid fluid and boundary particles can interact efectively. this approach was previosly applied by miles macklin in the Nvidia felx unified solver </aside>
 					<div>
 						<h4>Phase coupling</h4>
 						<div>
@@ -535,7 +533,7 @@
 							</div>
 							$+$
 							<div class="line">
-								<div style="color:rgba(52, 99, 255, 0.829)" class="fragment" data-fragment-index="4">Boundaries</div>
+								<div style="color:rgb(89, 156, 255)" class="fragment" data-fragment-index="4">Boundaries</div>
 								<div class="line fragment highlight-blue" data-fragment-index="4">$\sum_{b}\frac{\rho_{0}}{\delta_{b}}
 									W_{ib}$</div>
 							</div>
@@ -544,7 +542,8 @@
 				</section>
 				<section>
 					<h4>Solid Bodies</h4>
-					<img src="images/distanceblack.PNG" style="height: 5em; width: auto;"> <br>
+					<aside class="notes"> Additionally, we modify the basic distance constraint of position based dynamics introducing the youngs modulus and an expansion coefficient. </aside>
+					<img src="images/distanceblack.png" style="height: 5em; width: auto;"> <br>
 					<div class="line">$C(x_{1},x_{2}) =(\mid x_{1} - x_{2}\mid - l_{0}+\Delta d_{0})E$</div> <br>
 					<div class="line" style="font-size:0.5em">\begin{equation}
 						E = \frac{2 E_{0} }{1 + e^{\Delta T}}
@@ -565,19 +564,21 @@
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
 					<div style="color:red">Phase coupling</div>
 					<object class="iconmini" data="images/down-arrowwhite.svg" alt=""></object>
-					<div class="fragment highlight-current-red">Transition coupling</div>
+					<div style="color:red">Transition coupling</div>
 				</div>
 				<div id="right" style="font-size: 1em;text-align:center;">
-					<div>
+					<div >
 						<object class="iconmini" data="images/3dwhite.svg" alt=""></object></div> <br>
-					<div>
+					<div >
 						<object class="iconmini" data="images/blurwhite.svg" alt=""></object><object class="iconmini" data="images/cloud-internet-symbolwhite.svg"></object>
 					</div><br>
-					<div><object class="iconmini" data="images/thermometer.svg" type=""></object></div> <br>
-					<div> <object class="iconmini" data="images/3dwhite.svg" type=""></object> +
+					<div ><object class="iconmini" data="images/thermometer.svg" type=""></object></div>
+					<br>
+					<div > <object class="iconmini" data="images/3dwhite.svg" type=""></object>
+						+
 						<object class="iconmini" data="images/blurwhite.svg"></object>+<object style="margin-left:10px" class="iconmini"
 						 data="images/cloud-internet-symbolwhite.svg"></object></div><br>
-					<div>
+					<div class=" fragment line" data-fragment-index="1">
 						<object class="iconmini" data="images/3dwhite.svg" type=""></object>
 						<object class="iconmini" data="images/doublearrow.png" alt=""></object>
 						<object class="iconmini" data="images/blurwhite.svg"></object>
@@ -591,6 +592,7 @@
 				<h1 class="mytitle"> Method </h1>
 				<h4>Transition Coupling</h4>
 				<section>
+						<aside class="notes"> To explain how we switch particles between states lets speak first about our main loop. please look the algotithm and the figures on the bottom to understand better how it works. Lets think in an arbitrary particule inside our system, the first step is calculate the possible next position, using the external forces, as the clasic method does, next we set the gravity of each particle depending on the latent heat of evaporation, then we perform the Neighborhood search to know which particles will impact the density or the temperature transport. Then the constraint proyection, that is the optimization of the constraints and it begins with our modified density constraint, continues with the viscosity constraint and ends with the distance constraint. being the first two for fluids and the last one for solids. when this loop ends, we use our constraint manager, who creates and breaks density constraints to make solids or melt them. next temperature is set among the particles. and finally the values are updated. </aside>
 					<pre style="margin-bottom: -2%; margin-top: 5%">
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="0">01  loop:</code>
 <code style="margin-top: -3%" class="fragment highlight-current-green" data-fragment-index="1">02	for all Particles do calculate Next Positions</code> 
@@ -618,27 +620,28 @@
 					<div id="right2">
 						<div style="position:relative; width:250px; height:250px; margin:0 auto;">
 							<div class="fragment fade-out" data-fragment-index="8">
-								<img class="fragment fade-in-then-out" data-fragment-index="0" src="images/0.PNG" style="position:absolute;top:0;left:0;" />
-								<img class="fragment fade-in-then-out" data-fragment-index="1" src="images/1.PNG" style="position:absolute;top:0;left:0;" />
-								<img class="fragment fade-in-then-out" data-fragment-index="2" src="images/2.PNG" style="position:absolute;top:0;left:0;" />
-								<img class="fragment fade-in-then-out" data-fragment-index="3" src="images/3.PNG" style="position:absolute;top:0;left:0;" />
-								<img class="fragment fade-in-then-out" data-fragment-index="5" src="images/4.PNG" style="position:absolute;top:0;left:0;" />
-								<img class="fragment fade-in-then-out" data-fragment-index="7" src="images/5.PNG" style="position:absolute;top:0;left:0;" />
+								<img class="fragment fade-in-then-out" data-fragment-index="0" src="images/0.png" style="position:absolute;top:0;left:0;" />
+								<img class="fragment fade-in-then-out" data-fragment-index="1" src="images/1.png" style="position:absolute;top:0;left:0;" />
+								<img class="fragment fade-in-then-out" data-fragment-index="2" src="images/2.png" style="position:absolute;top:0;left:0;" />
+								<img class="fragment fade-in-then-out" data-fragment-index="3" src="images/3.png" style="position:absolute;top:0;left:0;" />
+								<img class="fragment fade-in-then-out" data-fragment-index="5" src="images/4.png" style="position:absolute;top:0;left:0;" />
+								<img class="fragment fade-in-then-out" data-fragment-index="7" src="images/5.png" style="position:absolute;top:0;left:0;" />
 							</div>
 							<div class="fragment fade-out" data-fragment-index="9">
-								<img class="fragment fade-in-then-out" data-fragment-index="8" src="images/7.PNG" style="position:absolute;top:0;left:0;" />
+								<img class="fragment fade-in-then-out" data-fragment-index="8" src="images/7.png" style="position:absolute;top:0;left:0;" />
 							</div>
 							<div class="fragment fade-out" data-fragment-index="10"><img class="fragment fade-in-then-out"
-								 data-fragment-index="9" src="images/6.PNG" style="position:absolute;top:0;left:0;" /></div>
+								 data-fragment-index="9" src="images/6.png" style="position:absolute;top:0;left:0;" /></div>
 							<div class="fragment fade-out" data-fragment-index="11"><img class="fragment fade-in-then-out"
-								 data-fragment-index="10" src="images/9.PNG" style="position:absolute;top:0;left:0;" /></div>
+								 data-fragment-index="10" src="images/9.png" style="position:absolute;top:0;left:0;" /></div>
 							<div class="fragment fade-out" data-fragment-index="12"><img class="fragment fade-in-then-out"
-								 data-fragment-index="11" src="images/8.PNG" style="position:absolute;top:0;left:0;" /></div>
-							<img class="fragment fade-in-then-out" data-fragment-index="12" src="images/0.PNG" style="position:absolute;top:0;left:0;" />
+								 data-fragment-index="11" src="images/8.png" style="position:absolute;top:0;left:0;" /></div>
+							<img class="fragment fade-in-then-out" data-fragment-index="12" src="images/0.png" style="position:absolute;top:0;left:0;" />
 						</div>
 					</div>
 				</section>
 				<section>
+						<aside class="notes"> to go more deeply in each point, and specifically in the transition coupling, lets se how the is the gravity inside a particle along the latent heat domain. when a particle doesnt have enougth latent heat of evaporation, its state is fluid so, at the begining of this transition the gravity force starst at minus nine dot eigth. but when latent heat of evaporation increases, gravity increases as well logaritmically, this produces the evaporation effect</aside>
 					<h4>Liquid-gas Phase</h4>
 					<pre><code>03	for all Fluid Particles do Set Gravity-Acceleration</code></pre>
 					<div id="left" style="font-size:0.7em">
@@ -655,10 +658,11 @@
 						</canvas></div>
 				</section>
 				<section>
+						<aside class="notes"> Also the density is changed in this transition in a similar way but we used in this case a sigma function to provide a diference between hot and cold fluids, this introduces a convection effect as well, and the effect is also constrained to the latent heat of evaporation domain, on the left side you can see the density constraint with our beta factor. </aside>
 					<h4>Liquid-gas Phase</h4>
 					<pre> <code>06		for all Particles do Density Constraint</code></pre>
 					<div id="left" style="font-size:0.7em">
-						\begin{equation}
+						\begin{equation} 	
 						C(\textbf{x})=\frac{\rho_{i}}{\rho_{0}\beta}-1
 						\end{equation}
 						\begin{equation}
@@ -674,6 +678,7 @@
 					</div>
 				</section>
 				<section>
+						<aside class="notes"> And finally for the melting and solidifying transition we created a constraint manager that creates and breaks constraints based on the latent heat of melting, to generate a new constraint, two particles need to meet three conditions: first both particles must be within a given threshold of distance, also particles neet to come from phase change to solid, this to avoid all solids solidify together, and the last one is the current number of constraint in a particle. this is also a variable that can be adjusted in the simulation but in general four constraints creates a plausible solid body</aside>
 					<h4>Solid-liquid phase</h4>
 					<pre><code>09	for all Particles do Manage Constraints</code></pre>
 					<div><b> Constraint Manager </b>| New Constraints</div>
@@ -702,6 +707,7 @@
 
 				</section>
 				<section>
+						<aside class="notes"> and finally to break the constrainst is just needed the particles to reach the latent heat of melting threshold, if this happen we break the constraint created between two particles.</aside>
 					<pre><code>09	for all Particles do Manage Constraints</code></pre>
 					<div style="margin-top:5%"> <b> Constraint Manager </b>| Break Constraints</div>
 					<div style="margin-top:0%">
@@ -723,27 +729,27 @@
 				<div>Implementation in C++ (Starting from Jan Bender´s PBD code)</div>
 				<div>Rendered Using flex by Nvidia</div>
 			</section>
-			<section data-background-video="videos/solidify.mp4" data-background-video-loop>
+			<section data-background-video="Videos/solidify.mp4" data-background-video-loop>
 				<div id="left">
 					<h4 id="panel" style="position:absolute; bottom:600%">Solidifying</h4>
 				</div>
 			</section>
-			<section data-background-video="videos/melting.mp4" data-background-video-loop data-background-video-loop>
+			<section data-background-video="Videos/melting.mp4" data-background-video-loop data-background-video-loop>
 				<div id="left">
 					<h4 id="panel" style="position:absolute; bottom:600%">Melting</h4>
 				</div>
 			</section>
-			<section data-background-video="videos/condensation.mp4" data-background-video-loop data-background-video-loop>
+			<section data-background-video="Videos/condensation.mp4" data-background-video-loop data-background-video-loop>
 				<div id="left">
 					<h4 id="panel" style="position:absolute; bottom:600%">Condensating</h4>
 				</div>
 			</section>
-			<section data-background-video="videos/evaporation.mp4" data-background-video-loop data-background-video-loop>
+			<section data-background-video="Videos/evaporation.mp4" data-background-video-loop data-background-video-loop>
 				<div id="left">
 					<h4 id="panel" style="position:absolute; bottom:600%">Evaporating</h4>
 				</div>
 			</section>
-			<section data-background-video="videos/simulation.mp4" data-background-video-loop data-background-video-loop>
+			<section data-background-video="Videos/simulation.mp4" data-background-video-loop data-background-video-loop>
 			</section>
 			<section>
 
